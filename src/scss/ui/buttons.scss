@@ -1,0 +1,14 @@
+.button-turquoise {
+  padding: 1.8rem;
+  border-radius: 1.6rem;
+  background: $turquoise;
+  text-align: center;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $white;
+  }
+  @include small-tablet {
+    border-radius: 2.4rem;
+    padding: 3.2rem 6.4rem;
+  }
+}
