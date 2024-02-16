@@ -32,10 +32,25 @@ main {
   flex-grow: 1;
 }
 
+.desktop {
+  display: block;
+
+  @media (max-width: 48em) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 48em) {
+    display: block;
+  }
+}
+
 @import './ui/ui';
 @import './components/_header';
 @import './components/_footer';
-
 
 section {
   padding: 10rem 0;
