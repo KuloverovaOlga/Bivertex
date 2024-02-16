@@ -20,53 +20,45 @@
     background: transparent;
     border: 0.15rem solid $black;
     position: relative;
-&::before,
-&::after {
-  position: absolute;
-  content:"";
-  pointer-events: none;
-  
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      pointer-events: none;
+    }
+    &:hover {
+      &::before {
+        width: 1rem;
+      }
+      &::after {
+        height: 1rem;
+      }
+    }
 
-}
-&:hover {
-  &::before {
-    width: 1rem;
-
-  
-  }
-  &::after {
-    height: 1rem;
-    
-  
-  }
-}
-
-&::before {
-  width: 1rem;
-  width: 0px;
-  top: -0.15rem;
-  bottom: -0.15rem;
-  height: auto;
-  left: 50%;
-  transform: translateX(-50%);
-  border-top:  0.3rem solid $white;
-  border-bottom:  0.3rem solid $white;
-  transition: width 0.3s;
-
-}
-&::after {
-  height: 1rem;
-  height: 0px;
-  left: -0.15rem;
-  right: -0.15rem;
-  width: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left: 0.3rem solid $white;
-  border-right: 0.3rem solid $white;
-  transition: height 0.3s;
-
-}
+    &::before {
+      width: 1rem;
+      width: 0px;
+      top: -0.15rem;
+      bottom: -0.15rem;
+      height: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 0.3rem solid $white;
+      border-bottom: 0.3rem solid $white;
+      transition: width 0.3s;
+    }
+    &::after {
+      height: 1rem;
+      height: 0px;
+      left: -0.15rem;
+      right: -0.15rem;
+      width: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 0.3rem solid $white;
+      border-right: 0.3rem solid $white;
+      transition: height 0.3s;
+    }
   }
 
   @include small-tablet {
