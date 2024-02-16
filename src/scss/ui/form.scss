@@ -2,7 +2,8 @@
   position: relative;
   width: 100%;
 }
-.input-group input {
+.input-group input,
+.input-group textarea {
   transition: color 0.3s;
   width: 100%;
   border: 0.15rem solid $black;
@@ -17,10 +18,46 @@
   }
 }
 
-._form-error input {
+.input-group--mob-white input,
+.input-group--mob-white textarea {
+  @include small-tablet {
+    border: 0.15rem solid $white;
+    color: $white;
+    &::placeholder {
+      color: $white;
+    }
+  }
+}
+
+.input-group textarea {
+  resize: none;
+  height: 12.5rem;
+  @include small-tablet {
+    height: 18rem;
+  }
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(18, 35, 26, 0.1);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(18, 35, 26, 0.3);
+    border-radius: 1rem;
+  }
+}
+
+._form-error input,
+._form-error textarea {
   color: #ff0e0e;
   &::placeholder {
     color: #ff0e0e;
+  }
+  @include small-tablet {
+    color: #ff0e0e;
+    &::placeholder {
+      color: #ff0e0e;
+    }
   }
 }
 

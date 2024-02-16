@@ -1,12 +1,74 @@
-.button-turquoise {
+.button {
   padding: 1.8rem;
   border-radius: 1.6rem;
-  background: $turquoise;
   text-align: center;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+
   &:hover {
     background-color: $white;
+    color: $black;
   }
+
+  &-turquoise {
+    background: $turquoise;
+  }
+  &-black {
+    background: $black;
+    color: $white;
+  }
+  &-border {
+    background: transparent;
+    border: 0.15rem solid $black;
+    position: relative;
+&::before,
+&::after {
+  position: absolute;
+  content:"";
+  pointer-events: none;
+  
+
+}
+&:hover {
+  &::before {
+    width: 1rem;
+
+  
+  }
+  &::after {
+    height: 1rem;
+    
+  
+  }
+}
+
+&::before {
+  width: 1rem;
+  width: 0px;
+  top: -0.15rem;
+  bottom: -0.15rem;
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top:  0.3rem solid $white;
+  border-bottom:  0.3rem solid $white;
+  transition: width 0.3s;
+
+}
+&::after {
+  height: 1rem;
+  height: 0px;
+  left: -0.15rem;
+  right: -0.15rem;
+  width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 0.3rem solid $white;
+  border-right: 0.3rem solid $white;
+  transition: height 0.3s;
+
+}
+  }
+
   @include small-tablet {
     border-radius: 2.4rem;
     padding: 3.2rem 6.4rem;
