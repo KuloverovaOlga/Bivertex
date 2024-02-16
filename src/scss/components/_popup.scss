@@ -76,12 +76,6 @@ body::before {
     display: flex;
     background-color: $light-grew;
     border-radius: 6rem;
-
-    padding: 12rem 9rem;
-
-    @include small-tablet {
-      padding: 10rem 6rem;
-    }
   }
 
   // .popup__body-close-btn
@@ -114,20 +108,33 @@ body::before {
     }
   }
 
-  &__body-content-box {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+  &--success {
+    & .popup__body {
+      display: flex;
+      background-color: $light-grew;
+      border-radius: 6rem;
 
-  &__body-content-box-desk {
-    width: 36rem;
-    @include small-tablet {
-      font-size: 2.8rem;
-      width: 100%;
+      padding: 12rem 9rem;
+
+      @include small-tablet {
+        padding: 10rem 6rem;
+      }
+    }
+    & .popup__body-content-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    & .popup__body-content-box-desk {
+      width: 36rem;
+      @include small-tablet {
+        font-size: 2.8rem;
+        width: 100%;
+      }
     }
   }
 }
