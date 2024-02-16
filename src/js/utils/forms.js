@@ -116,6 +116,13 @@ export let formValidate = {
       } else {
         this.removeError(formRequiredItem);
       }
+    } else if (formRequiredItem.dataset.required === 'dropdown') {
+      if (!formRequiredItem.classList.contains('filled')) {
+        this.addError(formRequiredItem);
+        error++;
+      } else {
+        this.removeError(formRequiredItem);
+      }
     } else {
       if (!formRequiredItem.value.trim()) {
         this.addError(formRequiredItem);

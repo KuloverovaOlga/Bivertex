@@ -113,11 +113,12 @@ body::before {
       display: flex;
       background-color: $light-grew;
       border-radius: 6rem;
-
+      width: 88rem;
       padding: 12rem 9rem;
 
       @include small-tablet {
         padding: 10rem 6rem;
+        width: 100%;
       }
     }
     & .popup__body-content-box {
@@ -127,10 +128,12 @@ body::before {
       align-items: center;
       justify-content: center;
       text-align: center;
+      width: 100%;
     }
 
     & .popup__body-content-box-desk {
-      width: 36rem;
+      // width: 36rem;
+      // width: 50rem;
       @include small-tablet {
         font-size: 2.8rem;
         width: 100%;
