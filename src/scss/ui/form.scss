@@ -1,6 +1,7 @@
 .input-group {
   position: relative;
   width: 100%;
+  display: block;
 }
 .input-group input,
 .input-group textarea {
@@ -82,5 +83,120 @@
     bottom: -3rem;
     font-size: 2.4rem;
     left: 4.3rem;
+  }
+}
+
+.form__input-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.form__dropdown {
+  position: relative;
+  & .input-dropdown {
+    padding-right: 8rem;
+    @media (max-width: 48em) {
+      padding-right: 12rem;
+    }
+  }
+  & .form__input-svg-box {
+    position: absolute;
+    right: 2.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.5rem;
+    transition: opacity 0.3s, visibility 0.3s;
+    & svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease-in-out;
+    }
+    @media (max-width: 48em) {
+      width: 4.8rem;
+      height: 4.8rem;
+      right: 4rem;
+
+      & svg path {
+        stroke: $white;
+      }
+    }
+  }
+
+  &_top {
+    &.open {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+
+    svg {
+      path {
+        stroke: $black;
+      }
+    }
+  }
+  &_bottom {
+    display: none;
+    border: 0.15rem solid $black;
+    border-radius: 1.6rem;
+    padding: 2rem;
+    width: 100%;
+    background-color: $light-grew;
+    color: $black;
+    position: absolute;
+    top: calc(100% + 1rem);
+    z-index: 2;
+
+    @media (max-width: 48em) {
+      padding: 4rem 2rem 4rem 4rem;
+      border-radius: 3.2rem;
+      top: 10rem;
+    }
+  }
+  &_list {
+    height: fit-content;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-height: 16.4rem;
+
+    @media (max-width: 48em) {
+      max-height: 32.8rem;
+      gap: 2.4rem;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.4rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f4f4f4;
+      border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #d7d7d7;
+      border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #d7d7d7;
+    }
+
+    &:last-child {
+      border-bottom: unset;
+    }
+  }
+  &_item {
+    cursor: pointer;
+    @media (max-width: 48em) {
+      padding: 0.8rem 0;
+    }
+    & input {
+      display: none;
+    }
   }
 }

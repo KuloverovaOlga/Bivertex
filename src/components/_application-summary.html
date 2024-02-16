@@ -2,20 +2,90 @@
   <div class="container">
     <div class="application__inner">
       <div class="application__title-box">
-        <p class="application__title tl1">Продолжим вместе с бивертех?</p>
-        <p class="application__desc txt18 txt18_caps">
-          заполните форму и наши специалисты свяжутся с вами в ближайшее время
+        <p class="application__title tl1">ЖДЕМ ВАШЕ РЕЗЮМЕ</p>
+        <p class="application__desc txt18 application__desc--long">
+          BEAVERTECH – компания, где вы можете реализовать свой потенциал, а ваши идеи и предложения будут
+          услышаны. Мы работаем над новыми станками, перед нами много интересной работы, задач и вызовов.
+          Присоединяйтесь!
         </p>
       </div>
-      <form data-popup-message="#popup__success" data-dev action="" class="application__form-wrapper">
+      <form data-popup-message="#popup__success-summary" data-dev action="" class="application__form-wrapper">
         <p class="application__form-title tl3">оставьте нам заявку</p>
         <div class="application__form-input-wrapper">
           <div class="application__form-input-box">
+            <div class="application__form-dropdown form__dropdown form__dropdown_search">
+              <div class="form__dropdown_top">
+                <label for="" class="application__label input-group input-group--mob-white">
+                  <span class="form__input-wrapper">
+                    <input
+                      class="input__field txt18 input-dropdown"
+                      type="text"
+                      placeholder="Название вакансии"
+                      data-validate
+                      data-required="dropdown"
+                      autocomplete="off"
+                      name="form[]"
+                      data-no-focus-classes
+                    />
+
+                    <span class="form__input-svg-box">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none">
+                        <path
+                          d="M6 9.5L12 15.5L18 9.5"
+                          stroke="#0E1C15"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span class="error-span subscription">Выберите вакансию</span>
+                </label>
+              </div>
+              <div class="form__dropdown_bottom">
+                <div class="form__dropdown_list">
+                  <label class="form__dropdown_item">
+                    <div class="form__dropdown_item_checkbox radio-wrapper">
+                      <input type="radio" name="locality" />
+                    </div>
+                    <span class="form__dropdown_item_name txt18">Инженер-конструктор станков с ЧПУ</span>
+                  </label>
+                  <label class="form__dropdown_item">
+                    <div class="form__dropdown_item_checkbox radio-wrapper">
+                      <input type="radio" name="locality" />
+                    </div>
+                    <span class="form__dropdown_item_name txt18">Инженер-конструктор станков с ЧПУ</span>
+                  </label>
+                  <label class="form__dropdown_item">
+                    <div class="form__dropdown_item_checkbox radio-wrapper">
+                      <input type="radio" name="locality" />
+                    </div>
+                    <span class="form__dropdown_item_name txt18"
+                      >Сервисный инженер (фрезерные обрабатывающие центры)</span
+                    >
+                  </label>
+                  <label class="form__dropdown_item">
+                    <div class="form__dropdown_item_checkbox radio-wrapper">
+                      <input type="radio" name="locality" />
+                    </div>
+                    <span class="form__dropdown_item_name txt18">Слесарь механосборочных работ</span>
+                  </label>
+                  <label class="form__dropdown_item">
+                    <div class="form__dropdown_item_checkbox radio-wrapper">
+                      <input type="radio" name="locality" />
+                    </div>
+                    <span class="form__dropdown_item_name txt18">Электромонтажник/Сборщик электрошкафов</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
             <label class="application__label input-group input-group--mob-white">
               <span class="form__input-wrapper txt18">
                 <input
                   class="input--name application__form-input"
-                  type="text"
+                  type="txt18"
                   placeholder="Ваше имя*"
                   data-validate
                   data-required
@@ -53,24 +123,46 @@
               </span>
               <span class="error-span">Поле заполнено неверно</span>
             </label>
-            <label class="application__label input-group input-group--mob-white">
-              <span class="form__input-wrapper">
-                <textarea
-                  class="input--textarea txt18"
-                  placeholder="Ваш запрос"
-                  autocomplete="off"
-                  name="form[]"
-                ></textarea>
-                <span class="error-span"></span>
+
+            <label class="application__label-input-file input-file">
+              <input type="file" multiple="" name="file_main" />
+              <span class="application__label-input-file-text-box txt18 txt18_caps">
+                прикрепить файл
+                <span class="application__label-input-file-svg-box">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_1822_5360)">
+                      <path
+                        d="M12.3297 12.15L9.85969 14.62C8.48969 15.99 8.48969 18.2 9.85969 19.57C11.2297 20.94 13.4397 20.94 14.8097 19.57L18.6997 15.68C21.4297 12.95 21.4297 8.51 18.6997 5.78C15.9697 3.05 11.5297 3.05 8.79969 5.78L4.55969 10.02C2.21969 12.36 2.21969 16.16 4.55969 18.51"
+                        stroke="#013341"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1822_5360">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
               </span>
             </label>
+            <div class="application__form-files-items file_main"></div>
           </div>
-          <p class="application__agreement-text  txt-small">
-            Нажимая «Отправить» вы подтверждаете, что согласны на <a href="#">обработку персональных данных</a>
+          <p class="application__agreement-text application__agreement-text--long txt-small">
+            Нажимая «Откликнуться» вы подтверждаете, что согласны на
+            <a href="#">обработку персональных данных</a>
           </p>
         </div>
         <button type="submit" class="application__btn button button-black txt20 txt20_caps">
-          заказать станок
+          откликнуться
         </button>
       </form>
       <div class="application__info-wrapper">
@@ -128,7 +220,8 @@
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path class="svg-fill"
+                    <path
+                      class="svg-fill"
                       d="M3 21L4.26525 16.3777C3.4845 15.0247 3.07425 13.491 3.075 11.9182C3.07725 7.00124 7.07849 3 11.9947 3C14.3805 3.00075 16.62 3.93 18.3045 5.61599C19.9882 7.30199 20.9152 9.54299 20.9145 11.9265C20.9122 16.8442 16.911 20.8455 11.9947 20.8455C10.5022 20.8447 9.03149 20.4705 7.72874 19.7595L3 21ZM7.94774 18.1447C9.20474 18.891 10.4047 19.338 11.9917 19.3387C16.0777 19.3387 19.4062 16.0132 19.4085 11.925C19.41 7.82849 16.0972 4.5075 11.9977 4.506C7.90874 4.506 4.5825 7.83149 4.581 11.919C4.58025 13.5877 5.06925 14.8372 5.89049 16.1445L5.14125 18.8805L7.94774 18.1447ZM16.488 14.0467C16.4325 13.9537 16.284 13.8982 16.0605 13.7865C15.8377 13.6747 14.742 13.1355 14.5372 13.0612C14.3332 12.987 14.1847 12.9495 14.0355 13.173C13.887 13.3957 13.4595 13.8982 13.3297 14.0467C13.2 14.1952 13.0695 14.214 12.8467 14.1022C12.624 13.9905 11.9055 13.7557 11.0542 12.996C10.392 12.405 9.94423 11.6752 9.81448 11.4517C9.68473 11.229 9.80098 11.1082 9.91198 10.9972C10.0125 10.8975 10.1347 10.737 10.2465 10.6065C10.3597 10.4775 10.3965 10.3845 10.4715 10.2352C10.5457 10.0867 10.509 9.95623 10.4527 9.84449C10.3965 9.73349 9.95098 8.63624 9.76573 8.18999C9.58424 7.75574 9.40049 7.81424 9.26399 7.80749L8.83649 7.79999C8.68799 7.79999 8.44649 7.85549 8.24249 8.07899C8.03849 8.30249 7.46249 8.84099 7.46249 9.93823C7.46249 11.0355 8.26124 12.0952 8.37224 12.2437C8.48399 12.3922 9.94348 14.6437 12.1792 15.609C12.711 15.8385 13.1265 15.9757 13.4497 16.0785C13.9837 16.248 14.4697 16.224 14.8537 16.167C15.282 16.1032 16.1722 15.6277 16.3582 15.1072C16.5442 14.586 16.5442 14.1397 16.488 14.0467Z"
                       fill="white"
                     />
@@ -146,7 +239,8 @@
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path class="svg-stroke"
+                    <path
+                      class="svg-stroke"
                       d="M3.48107 6.59719L3.48104 6.59716L3.47726 6.6014C3.26823 6.83544 3.11794 7.15187 3.00406 7.48528C2.88766 7.82606 2.7965 8.2234 2.72545 8.6508C2.5833 9.50596 2.5149 10.5237 2.5022 11.538C2.48948 12.554 2.5325 13.5801 2.61745 14.4557C2.70036 15.3103 2.8274 16.0702 3.00214 16.532C3.13486 16.9117 3.35993 17.2535 3.65655 17.5298C3.95387 17.8067 4.31454 18.01 4.70756 18.1244C4.95605 18.2008 5.35684 18.256 5.8247 18.3003C6.31108 18.3463 6.91593 18.3842 7.5956 18.4142C8.95577 18.4741 10.6327 18.5031 12.2953 18.4997C13.9576 18.4964 15.6119 18.4608 16.9265 18.3911C17.5831 18.3562 18.1611 18.3125 18.6155 18.2592C18.8425 18.2325 19.0448 18.2027 19.2138 18.169C19.3723 18.1375 19.5369 18.0959 19.6678 18.0336C20.1887 17.7884 20.6132 17.3808 20.8684 16.8716L20.8701 16.8682C21.1023 16.396 21.2516 15.6605 21.3478 14.8573C21.4461 14.0357 21.4955 13.0811 21.4997 12.1303C21.5039 11.1791 21.4631 10.2223 21.3786 9.39551C21.2958 8.58525 21.1669 7.85277 20.9752 7.37658C20.8334 7.01349 20.6084 6.68767 20.3187 6.42248C20.0302 6.15835 19.6847 5.96098 19.3086 5.84338C19.1061 5.77499 18.7821 5.72969 18.4215 5.69387C18.036 5.65557 17.5496 5.62331 16.9945 5.59674C15.8831 5.54355 14.4772 5.51228 13.012 5.50296C10.0942 5.48441 6.90314 5.55272 5.31929 5.71444C4.6141 5.76622 3.95314 6.08054 3.48107 6.59719ZM10.278 9.83483L14.2176 11.8052L10.278 13.7606V9.83483Z"
                       stroke="white"
                     />
