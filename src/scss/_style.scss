@@ -9,6 +9,7 @@ $dark-blue: #013341;
 $grey-2: #e1e1e1;
 $grey-2: #cdcdcd;
 
+
 // body
 body {
   background-color: $light-grew;
@@ -25,6 +26,7 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   position: relative;
+  overflow: hidden;
 }
 
 // main
