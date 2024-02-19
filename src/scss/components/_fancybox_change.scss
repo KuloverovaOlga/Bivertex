@@ -23,7 +23,7 @@
     }
 }
 .fancybox__toolbar__column.is-right {
-    margin: 4rem 4rem 0 0;
+    // margin: 4rem 4rem 0 0;
     @include small-tablet {
         margin: 3.2rem 3.2rem 0 0;
     }
@@ -32,31 +32,33 @@
     display: none;
 }
 .is-horizontal .f-carousel__nav .f-button.is-prev, .is-horizontal .f-carousel__nav .f-button.is-next, .is-horizontal .fancybox__nav .f-button.is-prev, .is-horizontal .fancybox__nav .f-button.is-next {
-    top: auto !important;
-    transform: unset !important;
-    position: inherit;
+
     width: 6.2rem;
     height: 6.2rem;
-    left: auto !important;
-    right: auto !important;
     svg {
         width: 100%;
         height: 100%;
     }
     @include small-tablet {
+        top: auto !important;
+        transform: unset !important;
+        position: inherit;
+        left: auto !important;
+        right: auto !important;
         width: 9.2rem;
         height: 9.2rem;
     }
 
 }
 .fancybox__nav {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1.2rem;
-    width: fit-content;
-    margin: auto;
-    margin-top: 1.6rem;
+
     @include small-tablet {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1.2rem;
+        width: fit-content;
+        margin: auto;
+        margin-top: 1.6rem;
         margin-top: 0;
         gap: 2.4rem;
     }
@@ -69,6 +71,8 @@
     content: unset !important;
 }
 .fancybox__viewport {
-    margin-bottom: -10rem;
-    padding-bottom: 10rem;
+    @include small-tablet {
+        margin-bottom: -10rem;
+        padding-bottom: 10rem;
+    }
 }
