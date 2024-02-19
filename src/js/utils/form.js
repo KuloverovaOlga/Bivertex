@@ -143,18 +143,18 @@ const form = () => {
   }
 
   $('.input-file input[type=file]').on('change', function () {
-    const filesItems = $('body').find('.application__form-files-items.' + $(this).attr('name'));
+    const filesItems = $('body').find('.form-files-items.' + $(this).attr('name'));
     if (filesItems.length > 0) {
-      filesItems.html('');
+      // filesItems.html('');
       let files = this.files;
       $.each(files, function (index, file) {
         const reader = new FileReader();
         reader.onload = function (event) {
           filesItems.append(
-            `<div class="application__form-files-item">
-                      <a class="application__form-files-item-link" target="_blank" href="${window.URL.createObjectURL(file)}">
-                          <span class="application__form-files-item-title txt18 txt18_caps">${file.name} </span> 
-                          <span class="application__form-files-item-size txt18">${formatFileSize(file.size)}</span>
+            `<div class="form-files-item">
+                      <a class="form-files-item-link" target="_blank" href="${window.URL.createObjectURL(file)}">
+                          <span class="form-files-item-title txt18 txt18_caps">${file.name} </span> 
+                          <span class="form-files-item-size txt18">${formatFileSize(file.size)}</span>
                      </a>
                       <button type="button" class="removeBtn">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -186,9 +186,13 @@ const form = () => {
       }
     });
     input[0].files = dataTransfer.files;
+    // input[0].value = '';
+    // console.log(input[0].files)
 
     $(this).parent().remove();
   });
+
+
 };
 
 export default form;
