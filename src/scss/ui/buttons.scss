@@ -96,12 +96,14 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.5s;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
   @include small-tablet {
     display: none;
   }
   &.arrow-top--show {
     opacity: 1;
+    visibility: visible;
   }
 }
 .arrow-top__arrow-svg-box {
