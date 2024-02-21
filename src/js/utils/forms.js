@@ -123,7 +123,14 @@ export let formValidate = {
       } else {
         this.removeError(formRequiredItem);
       }
-    } else {
+    } else if (formRequiredItem.dataset.required === 'file') {
+      if (formRequiredItem.files.length === 0) {
+        this.addError(formRequiredItem);
+        error++;
+      } else {
+        this.removeError(formRequiredItem);
+      }
+    }else {
       if (!formRequiredItem.value.trim()) {
         this.addError(formRequiredItem);
         error++;

@@ -76,6 +76,7 @@ body::before {
     display: flex;
     background-color: $light-grew;
     border-radius: 6rem;
+    padding: 8rem;
   }
 
   // .popup__body-close-btn
@@ -107,7 +108,9 @@ body::before {
       }
     }
   }
-
+  // ----------------------------------------success-------------------------------------------
+  // ----------------------------------------success-------------------------------------------
+  // ----------------------------------------success-------------------------------------------
   &--success {
     & .popup__body {
       display: flex;
@@ -138,6 +141,91 @@ body::before {
         font-size: 2.8rem;
         width: 100%;
       }
+    }
+  }
+
+  // ----------------------------------------big-------------------------------------------
+  // ----------------------------------------big-------------------------------------------
+  // ----------------------------------------big-------------------------------------------
+  &--big {
+    // .popup__body-content-box
+
+    & .popup__body-content-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+    }
+
+    // .popup__body-content-box-title-box
+
+    & .popup__body-content-box-title-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    // .popup__body-content-box-title
+
+    & .popup__body-content-box-title {
+      text-transform: uppercase;
+    }
+    // .popup__body-content-box-desk
+
+    & .popup__body-content-box-desk {
+      width: 41.1rem;
+    }
+
+    // .popup__body-form-wrapper
+
+    & .popup__body-form-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+
+    // .popup__body-form-input-wrapper
+
+    & .popup__body-form-input-wrapper {
+    }
+
+    // .popup__body-form-input-box
+
+    & .popup__body-form-input-box {
+      display: grid;
+      grid-template-columns: repeat(2, 35.5rem);
+      gap: 2rem;
+    }
+
+    // .popup__body-label
+
+    & .popup__body-label {
+      &--textarea {
+        grid-column: 2/3;
+        grid-row: 1/4;
+        & .form__input-wrapper {
+          height: 100%;
+        }
+        & textarea {
+          height: 100%;
+        }
+      }
+    }
+
+    // .popup__body-form-input
+
+    & .popup__body-form-input {
+    }
+
+    // .popup__body-agreement-text
+
+    & .popup__body-agreement-text {
+      width: 43.5rem;
+    }
+
+    // .popup__body-btn
+
+    & .popup__body-btn {
+      margin-top: 0.8rem;
     }
   }
 }

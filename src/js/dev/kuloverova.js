@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     arrowTop();
   } catch {}
+  try {
+    detNewsSwiper();
+  } catch {}
 });
 
 function phoneMask() {
@@ -187,11 +190,11 @@ function headerDropdownSwiper() {
     slidesPerView: 4,
     loop: true,
     grabCursor: true,
-    spaceBetween:rem(6.7),
+    spaceBetween: rem(6.7),
     navigation: {
       nextEl: '.header__dropdown-swiper-btn--next',
       prevEl: '.header__dropdown-swiper-btn--prev'
-    },
+    }
 
     // pagination: {
     //   el: '.main-hero__progress',
@@ -204,45 +207,64 @@ function scroll() {
   const anchors = document.querySelectorAll(`.nav-link`);
 
   for (let anchor of anchors) {
-      anchor.addEventListener('click', (e) => {
-          e.preventDefault();
-          const blockId = anchor.getAttribute('href');
-          document.querySelector('' + blockId).scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-          });
-          console.log('awdawd')
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const blockId = anchor.getAttribute('href');
+      document.querySelector('' + blockId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
+      console.log('awdawd');
+    });
   }
 }
 
 function arrowTop() {
-	const nav = document.querySelector('.arrow-top__arrow-box');
-	const navOffsetTop = nav.offsetTop;
-  
-	function handleScroll() {
-	  if (window.innerWidth > 768) {
-		if (window.scrollY > navOffsetTop/2) {
-		  nav.classList.add('arrow-top--show');
-		} else {
-		  nav.classList.remove('arrow-top--show');
-		}
-	  }
-	}
-  
-	function handleResize() {
-	  // Выключаем обработчик скролла, если ширина экрана меньше 768
-	  if (window.innerWidth <= 768) {
-		window.removeEventListener('scroll', handleScroll);
-	  } else {
-		window.addEventListener('scroll', handleScroll);
-	  }
-	}
-  
-	// Добавляем обработчик события resize
-	window.addEventListener('resize', handleResize);
-  
-	// Инициализируем обработчик скролла при загрузке страницы
-	handleResize();
-  };
+  const nav = document.querySelector('.arrow-top__arrow-box');
+  const navOffsetTop = nav.offsetTop;
 
+  function handleScroll() {
+    if (window.innerWidth > 768) {
+      if (window.scrollY > navOffsetTop / 3) {
+        nav.classList.add('arrow-top--show');
+      } else {
+        nav.classList.remove('arrow-top--show');
+      }
+    }
+  }
+
+  function handleResize() {
+    // Выключаем обработчик скролла, если ширина экрана меньше 768
+    if (window.innerWidth <= 768) {
+      window.removeEventListener('scroll', handleScroll);
+    } else {
+      window.addEventListener('scroll', handleScroll);
+    }
+  }
+
+  // Добавляем обработчик события resize
+  window.addEventListener('resize', handleResize);
+
+  // Инициализируем обработчик скролла при загрузке страницы
+  handleResize();
+}
+
+function detNewsSwiper() {
+  const swiperOurWorks = new Swiper('.det-news__swiper', {
+    slidesPerView: 1,
+    loop: true,
+    grabCursor: true,
+    speed: 1000,
+    navigation: {
+      nextEl: '.det-news__swiper-btn--next',
+      prevEl: '.det-news__swiper-btn--prev'
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: rem(2)
+      }
+    }
+  });
+}
