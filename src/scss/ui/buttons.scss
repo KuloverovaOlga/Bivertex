@@ -27,6 +27,7 @@
       pointer-events: none;
     }
     &:hover {
+      background: transparent;
       &::before {
         width: 1rem;
       }
