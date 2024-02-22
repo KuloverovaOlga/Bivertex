@@ -18,7 +18,7 @@
   }
   &-border {
     &--light {
-      border: 0.15rem solid $light-grew;
+      // border: 0.15rem solid $light-grew;
 
       &::before {
         border-top: 0.5rem solid $dark-blue !important;
@@ -35,7 +35,7 @@
       }
     }
     background: transparent;
-    border: 0.15rem solid $black;
+    border: 0.2rem solid $black;
     position: relative;
     &::before,
     &::after {
@@ -90,6 +90,7 @@
   width: 6rem;
   height: 6rem;
   margin-top: 0;
+  transition: opacity 0.3s;
   &::after {
     content: '';
   }
