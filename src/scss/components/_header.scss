@@ -284,7 +284,7 @@
     @include small-tablet {
       width: 100%;
       &.active .header__nav-item-link-wrapper .header__nav-item-svg-box {
-        transform: rotate(180deg);
+        // transform: rotate(180deg);
       }
     }
   }
@@ -323,7 +323,7 @@
         color: $turquoise;
       }
       & .header__nav-item-svg-box {
-        transform: rotate(180deg);
+        // transform: rotate(180deg);
         & svg path {
           stroke: $turquoise;
         }
@@ -332,12 +332,13 @@
 
     @include small-tablet {
       gap: 1.6rem;
+
       &:hover {
         & .header__nav-item-link {
           color: $black;
         }
         & .header__nav-item-svg-box {
-          transform: rotate(0);
+          transform: rotate(-90deg);
           & svg path {
             stroke: $black;
           }
@@ -364,6 +365,7 @@
     @include small-tablet {
       width: 4.8rem;
       height: 4.8rem;
+      transform: rotate(-90deg);
       & svg path {
         stroke: $black;
       }
@@ -398,17 +400,36 @@
     }
 
     @include small-tablet {
-      position: static;
-      transform: translateY(0);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: $light-grew;
+      z-index: 5;
+
+      transform: translateY(0) translateX(-150%);
       opacity: 1;
       visibility: visible;
       z-index: 2;
-      transition: max-height 0.3s, height 0.3s;
+      transition: transform 0.5s;
       border-top: none;
+      padding: 6.4rem 3.2rem;
       &.active {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.3s, visibility 0.3s, z-index 0.3s, max-height 0.3s;
+        transition: transform 0.5s;
+        transform: translateY(0) translateX(0);
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: transparent; /* Цвет ползунка */
+        }
+
+        /* Стилизуем трек (фон) скроллбара */
+        &::-webkit-scrollbar-track {
+          background-color: transparent; /* Цвет фона */
+        }
       }
     }
   }
@@ -433,7 +454,6 @@
       align-items: flex-start;
       justify-content: flex-start;
       gap: 2rem;
-      margin-top: 2rem;
       padding: 0;
       border-radius: 0;
     }
@@ -445,24 +465,25 @@
   }
 
   &__dropdown-swiper-btn--prev {
-    left: 10rem!important;
+    left: 10rem !important;
     @include small-tablet {
-      display: none!important;
+      display: none !important;
     }
   }
   &__dropdown-swiper-btn--next {
-    right: 10rem!important;
+    right: 10rem !important;
     @include small-tablet {
-      display: none!important;
+      display: none !important;
     }
   }
 
-  &__dropdown-inner-list {
+  &__dropdown-inner-list-wrapper {
     display: none;
     @include small-tablet {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      // gap: 6.4rem;
+      width: 100%;
     }
   }
 
@@ -475,6 +496,39 @@
     gap: 3.2rem;
     align-items: center;
     justify-content: center;
+    @include small-tablet {
+      padding: 6.4rem 0 8rem;
+      &:not(:last-child) {
+        border-bottom: 0.1rem solid $black;
+      }
+    }
+  }
+
+  // .header__dropdown-services-item-wrapper
+  &__dropdown-services-item-wrapper {
+    @include small-tablet {
+      display: flex;
+      gap: 3.2rem;
+      // align-items: center;
+    }
+  }
+
+  // .header__dropdown-inner-list-btn
+
+  &__dropdown-inner-list-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  // .header__dropdown-inner-list-btn-svg-box
+
+  &__dropdown-inner-list-btn-svg-box {
+  }
+
+  // .header__dropdown-inner-list-btn-text
+
+  &__dropdown-inner-list-btn-text {
   }
 
   // .header__dropdown-services-item-icon
@@ -490,7 +544,9 @@
       object-fit: cover;
     }
     @include small-tablet {
-      display: none;
+      width: 28rem;
+      height: 28rem;
+      flex-shrink: 0;
     }
   }
 
@@ -503,14 +559,31 @@
     justify-content: center;
     text-align: center;
     gap: 0.8rem;
+    @include small-tablet {
+      gap: 1.6rem;
+      align-items: flex-start;
+      text-align: left;
+    }
   }
   // .header__dropdown-services-item-title
 
   &__dropdown-services-item-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 32.2rem;
     @include small-tablet {
-      font-weight: 400;
-      font-size: 2.8rem;
-      line-height: 140%;
+      font-weight: 600;
+      font-size: 3.2rem;
+      line-height: 130%;
+      text-transform: uppercase;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // количество строк
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: wrap;
+      width: 100%;
     }
   }
   // .header__dropdown-services-item-desk
@@ -520,6 +593,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
     width: 32.2rem;
+
+    @include small-tablet {
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // количество строк
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: wrap;
+      width: 100%;
+    }
   }
 
   // .header__dropdown-services-item-btn-box
@@ -528,9 +611,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.25rem;
     @include small-tablet {
-      display: none;
+   width: 100%;
     }
   }
 
@@ -538,6 +621,14 @@
 
   &__dropdown-btn {
     padding: 1.4rem 2.4rem;
+    color: $dark-blue;
+    border-color: $dark-blue;
+    @include small-tablet {
+      color: $black;
+      border-color: $black;
+      width: 100%;
+      font-weight: 700;
+    }
   }
 
   // .header__dropdown-link
@@ -547,6 +638,15 @@
     align-items: center;
     gap: 0.8rem;
     justify-content: center;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.2rem solid $black;
+    color: $dark-blue;
+    @include small-tablet {
+      color: $black;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 130%;
+    }
   }
 
   // .header__dropdown-link-svg-box
@@ -558,6 +658,13 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+    }
+    @include small-tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+      & svg path {
+        stroke: $black;
+      }
     }
   }
 
