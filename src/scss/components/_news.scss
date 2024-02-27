@@ -145,4 +145,137 @@
     column-gap: 1.2rem;
     cursor: pointer;
   }
+
+  @media (max-width: 48em) {
+    &__head {
+      margin-bottom: 4.8rem;
+
+      &-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &-title {
+        font-size: 6rem;
+        line-height: 6.6rem;
+        margin-bottom: 4.8rem;
+      }
+
+      &-subtitle {
+        max-width: none;
+        padding: 3.2rem;
+      }
+
+      &-tabs {
+        display: none;
+      }
+    }
+
+    &__item {
+      &_type1,
+      &_type2,
+      &_type3 {
+        flex: 0 0 68.6rem;
+        flex-direction: column;
+        padding: 3.2rem;
+        border-radius: 4rem;
+
+        .news__item-img {
+          width: 62.2rem;
+          height: 38.4rem;
+          border-radius: 4rem;
+          margin-bottom: 4.8rem;
+        }
+
+        .news__item-descr {
+          position: relative;
+          width: auto;
+          padding: 0;
+
+          &_top {
+            margin-bottom: 4.8rem;
+          }
+        }
+
+        .news__item-title {
+          font-size: 4rem;
+          font-weight: 600;
+          line-height: 5.2rem;
+        }
+      }
+
+      &_type1 {
+        .news__item-date {
+          width: min-content;
+          position: absolute;
+          right: 0;
+          top: 1.25rem;
+        }
+
+        .news__item-descr {
+          .news__item-tag {
+            margin-bottom: 4.8rem;
+          }
+        }
+      }
+
+      &-tag {
+        width: min-content;
+        padding: 1.2rem 2.4rem;
+      }
+    }
+
+    &__more {
+      width: 34rem;
+    }
+
+    &__dropdown {
+      max-height: 13rem;
+      overflow-y: hidden;
+      transition: 0.2s ease-in-out;
+
+      &.active {
+        .news__dropdown-head {
+          div {
+            &:last-child {
+              transform: rotateZ(-180deg);
+            }
+          }
+        }
+      }
+
+      &-head {
+        background-color: $turquoise;
+        color: $black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3.6rem 4.8rem;
+        border-radius: 2.4rem;
+        margin-bottom: 2rem;
+
+        & > * {
+          pointer-events: none;
+        }
+
+        div {
+          &:last-child {
+            transition: 0.2s ease-in-out;
+          }
+        }
+      }
+
+      &-list {
+        padding: 4rem;
+        border: 1px solid $black;
+        border-radius: 2.4rem;
+
+        li {
+          &:not(:last-child) {
+            margin-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+  }
 }
