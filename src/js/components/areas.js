@@ -88,7 +88,7 @@ const areasBlockSlider = () => {
 
         sliderTabs.forEach((tab, j) => {
           if (tab == activeTab) {
-            areasSwiper[i].slideTo(j);
+            areasSwiper.slideTo(j);
             tab.classList.add('active');
             return;
           }
