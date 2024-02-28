@@ -1,4 +1,10 @@
 .footer {
+
+  padding: 10rem 0 0;
+  @include small-tablet {
+    padding: 9rem 0 0;
+  }
+
   &__top {
     padding: 5.2rem 0;
     border-top: 1.5px solid $black;
