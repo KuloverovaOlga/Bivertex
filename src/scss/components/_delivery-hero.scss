@@ -1,6 +1,7 @@
 .delivery-hero {
   margin-top: -8.5rem;
   padding-top: 0;
+
   @include small-tablet {
     margin-top: -14.6rem;
   }
@@ -22,10 +23,28 @@
     height: 52.8rem;
     border-radius: 0 0 6rem 6rem;
     overflow: hidden;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      inset: 0;
+      z-index: 1;
+      backdrop-filter: blur(2px);
+      background: rgba(22, 23, 23, 0.1);
+    }
     & img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include small-tablet {
+      height: 51.6rem;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: unset;
+      }
     }
   }
 }

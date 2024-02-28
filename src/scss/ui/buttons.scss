@@ -100,6 +100,11 @@
     -o-object-fit: cover;
     object-fit: cover;
   }
+
+  @include small-tablet {
+    width: 9.5rem;
+    height: 9.5rem;
+  }
 }
 
 .arrow-top__arrow-box {
