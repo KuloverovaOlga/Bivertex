@@ -50,6 +50,10 @@
     }
   }
 
+  &__dropdown {
+    display: none;
+  }
+
   &__body {
     display: flex;
     justify-content: space-between;
@@ -230,6 +234,7 @@
     }
 
     &__dropdown {
+      display: block;
       max-height: 13rem;
       overflow-y: hidden;
       transition: 0.2s ease-in-out;

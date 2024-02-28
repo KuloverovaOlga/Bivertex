@@ -77,6 +77,19 @@
       width: 54rem;
       max-height: 52.8rem;
       overflow-y: scroll;
+      padding-right: 4rem;
+
+      &::-webkit-scrollbar {
+        width: 0.2rem;
+
+        &-track {
+          background-color: rgb(243, 243, 243, 0.25);
+        }
+
+        &-thumb {
+          background-color: $light-grew;
+        }
+      }
     }
 
     &-title {
