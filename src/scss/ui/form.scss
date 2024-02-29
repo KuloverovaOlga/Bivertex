@@ -92,6 +92,7 @@
     bottom: -3rem;
     font-size: 2.4rem;
     left: 4.3rem;
+   
   }
 }
 
@@ -100,7 +101,8 @@
   display: flex;
 }
 
-.form__dropdown {
+.form__dropdown,
+.form__dropdown_search{
   position: relative;
   & .input-dropdown {
     padding-right: 8rem;
@@ -161,7 +163,7 @@
     @media (max-width: 48em) {
       padding: 4rem 2rem 4rem 4rem;
       border-radius: 3.2rem;
-      top: 10rem;
+      top: 11rem;
     }
   }
   &_list {
