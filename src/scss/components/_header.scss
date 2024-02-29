@@ -62,6 +62,37 @@
         border-top: none;
       }
     }
+
+    &-career {
+      @include small-tablet {
+        & .header__inner-wrapper {
+          border-bottom: 0.15rem solid $black;
+        }
+        & .header__mob-logo {
+          & svg path {
+            fill: $black;
+          }
+        }
+        & .header__mob-call {
+          & svg path {
+            stroke: $black;
+          }
+        }
+        & .header__mob-inner {
+          border-bottom: 0.2rem solid $black;
+        }
+
+        & .header__mob-burger {
+          & .header__mob-burger-svg-box {
+            &:nth-child(1) {
+              & svg path {
+                stroke: $black;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   // .header__mob
@@ -116,7 +147,7 @@
         transform: scale(1);
         &:nth-child(1) {
           & svg path {
-            stroke: $grew;
+            stroke: $black;
           }
         }
         &:nth-child(2) {
@@ -139,16 +170,16 @@
           }
         }
 
-        & + .header__mob-logo {
-          & svg path {
-            fill: $black;
-          }
-        }
-        & ~ .header__mob-call {
-          & svg path {
-            stroke: $black;
-          }
-        }
+        // & + .header__mob-logo {
+        //   & svg path {
+        //     fill: $black;
+        //   }
+        // }
+        // & ~ .header__mob-call {
+        //   & svg path {
+        //     stroke: $black;
+        //   }
+        // }
       }
     }
   }
@@ -165,7 +196,7 @@
         object-fit: cover;
       }
       & svg path {
-        fill: $grew;
+        fill: $black;
         transition: fill 0.3s;
       }
     }
@@ -182,7 +213,7 @@
       object-fit: cover;
     }
     & svg path {
-      stroke: $grew;
+      stroke: $black;
       transition: stroke 0.3s;
     }
   }
@@ -613,7 +644,7 @@
     align-items: center;
     gap: 1.25rem;
     @include small-tablet {
-   width: 100%;
+      width: 100%;
     }
   }
 
