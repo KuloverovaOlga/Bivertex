@@ -3,7 +3,7 @@
   border-radius: 1.6rem;
   text-align: center;
   transition: background-color 0.3s, color 0.3s;
-
+  display: inline-block;
   &:hover {
     background-color: $white;
     color: $black;
@@ -34,6 +34,23 @@
         color: $white;
       }
     }
+    &--white {
+      // border: 0.15rem solid $light-grew;
+      background-color: $white !important;
+      &::before {
+        border-top: 0.5rem solid $white !important;
+        border-bottom: 0.5rem solid $white !important;
+      }
+      &::after {
+        border-left: 0.5rem solid $white !important;
+        border-right: 0.5rem solid $white !important;
+      }
+
+      &:hover {
+        background-color: $white !important;
+        color: $black;
+      }
+    }
     background: transparent;
     border: 0.2rem solid $black;
     position: relative;
@@ -44,7 +61,7 @@
       pointer-events: none;
     }
     &:hover {
-      background: transparent;
+      background: $light-grew;
       &::before {
         width: 1rem;
       }
@@ -61,8 +78,8 @@
       height: auto;
       left: 50%;
       transform: translateX(-50%);
-      border-top: 0.5rem solid $white;
-      border-bottom: 0.5rem solid $white;
+      border-top: 0.5rem solid $light-grew;
+      border-bottom: 0.5rem solid $light-grew;
       transition: width 0.3s;
     }
     &::after {
@@ -73,8 +90,8 @@
       width: auto;
       top: 50%;
       transform: translateY(-50%);
-      border-left: 0.5rem solid $white;
-      border-right: 0.5rem solid $white;
+      border-left: 0.5rem solid $light-grew;
+      border-right: 0.5rem solid $light-grew;
       transition: height 0.3s;
     }
   }
