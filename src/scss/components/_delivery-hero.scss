@@ -40,8 +40,9 @@
 
     @include small-tablet {
       height: 51.6rem;
+
       & img {
-        width: 100%;
+        width: 145%;
         height: 100%;
         object-fit: unset;
       }
