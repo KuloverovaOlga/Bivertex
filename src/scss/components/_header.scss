@@ -32,6 +32,21 @@
       }
     }
 
+    & .header__mob-container {
+      & .header__mob-inner.active {
+        & .header__mob-call {
+          & svg path {
+            stroke: $black;
+          }
+        }
+        & .header__mob-logo {
+          & svg path {
+            fill: $black;
+          }
+        }
+      }
+    }
+
     & .header__mob-logo {
       & svg path {
         fill: $white;
