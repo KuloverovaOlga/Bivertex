@@ -18,7 +18,7 @@
   }
   &-border {
     &--light {
-      // border: 0.15rem solid $light-grew;
+      border: 0.15rem solid $light-grew;
 
       &::before {
         border-top: 0.5rem solid $dark-blue !important;
