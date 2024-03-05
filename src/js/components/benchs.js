@@ -42,10 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $(".benchs__mob-selector--top").on("click", function () {
         $('.benchs__mob-selector--bottom').slideToggle()
+        $(this).toggleClass('active')
     });
     $(".benchs__mob-selector--item").on("click", function () {
         $('.benchs__mob-selector--item').removeClass('active')
         $(this).addClass('active')
+        $(".benchs__mob-selector--top").removeClass('active')
         let index = $(this).index();
         $(".benchs__mob-selector--top").find('span').text($(this).text())
         $('.enchs__mob-content').removeClass('active')
