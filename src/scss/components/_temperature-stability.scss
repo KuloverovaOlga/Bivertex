@@ -16,7 +16,7 @@
     width: 100%;
     height: 107.2rem;
     color: $white;
-    padding: 10rem 6rem 3.6rem;
+    padding: 10rem 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,6 +24,16 @@
     @include small-tablet {
       height: 162.4rem;
       padding: 3.2rem;
+    }
+  }
+
+  &__content-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.6rem;
+    @include small-tablet {
+      flex-direction: column;
+      height: 100%;
     }
   }
 
@@ -51,14 +61,17 @@
     gap: 4rem;
     width: 104.6rem;
     @include small-tablet {
-        width: 68.6rem;
-        gap: 4.8rem;
-      }
+      width: 68.6rem;
+      gap: 2rem;
+    }
   }
 
   // .temperature-stability__title
 
   &__title {
+    @include small-tablet {
+      margin-bottom: 2.8rem;
+    }
   }
 
   // .temperature-stability__text-box
@@ -76,20 +89,20 @@
 
   &__text {
     &:nth-child(1) {
-        width: 44.2rem;
-        @include small-tablet {
-          width: 68.6rem;
-        }
-      }
-      &:nth-child(2) {
-        width: 48rem;
-        @include small-tablet {
-          width: 68.6rem;
-        }
-      }
+      width: 44.2rem;
       @include small-tablet {
-        font-size: 2.8rem;
+        width: 68.6rem;
       }
+    }
+    &:nth-child(2) {
+      width: 48rem;
+      @include small-tablet {
+        width: 68.6rem;
+      }
+    }
+    @include small-tablet {
+      font-size: 2.8rem;
+    }
   }
 
   // .temperature-stability__desc-box
@@ -102,19 +115,18 @@
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    height: fit-content;
     @include small-tablet {
-   width: 68.6rem;
-
-      }
+      width: 68.6rem;
+    }
   }
 
   // .temperature-stability__desc
 
   &__desc {
     @include small-tablet {
-       font-size: 3.2rem;
-        
-           }
+      font-size: 3.2rem;
+    }
   }
 
   // .temperature-stability__btn
@@ -123,11 +135,14 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    align-self: flex-end;
     @include small-tablet {
+      margin-top: 2.8rem;
+
       font-size: 2.4rem;
       gap: 1.6rem;
       font-weight: 700;
-
+      align-self: flex-start;
       line-height: 130%;
       text-transform: uppercase;
       &:hover {
@@ -161,9 +176,9 @@
     overflow: hidden;
     position: relative;
     @include small-tablet {
-        width: 4.8rem;
-        height: 4.8rem;
-      }
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
 
   // .temperature-stability__link-svg-box
@@ -190,6 +205,30 @@
     @include small-tablet {
       width: 4.8rem;
       height: 4.8rem;
+    }
+  }
+
+  // .temperature-stability__schedule-box
+
+  &__schedule-box {
+    width: 100%;
+    padding: 5rem 5.4rem 4.4rem 3.4rem;
+    background-color: $white;
+    border-radius: 3.2rem;
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  // .temperature-stability__schedule-img-box
+
+  &__schedule-img-box {
+    width: 171.2rem;
+    height: 29.9rem;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
