@@ -29,6 +29,7 @@
       content: '';
       inset: 0;
       z-index: 1;
+      -webkit-backdrop-filter: blur(2px);
       backdrop-filter: blur(2px);
       background: rgba(22, 23, 23, 0.1);
       border-radius: 0 0 6rem 6rem;
