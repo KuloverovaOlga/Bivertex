@@ -52,6 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     catalogFilterModal();
   } catch {}
+  try {
+    structuralFeaturesSwiper();
+  } catch {}
+  try {
+    additionalFeaturesSwiper();
+  } catch {}
+  try {
+    systemCncTabs() 
+  } catch {}
 });
 
 function phoneMask() {
@@ -389,17 +398,15 @@ function catalogDropdownInputSearch() {
 function modalFiltersCalc() {
   if ($('.current-vacancies__current-filters-item').length > 0) {
     $('.current-vacancies__filters-list-wrapper').css('height', `calc(100% - 46rem)`);
-    $('.current-vacancies__current-filters-box.mobile').slideDown()
+    $('.current-vacancies__current-filters-box.mobile').slideDown();
   } else {
     $('.current-vacancies__filters-list-wrapper').css('height', `calc(100% - 28rem)`);
 
-    $('.current-vacancies__current-filters-box.mobile').slideUp()
+    $('.current-vacancies__current-filters-box.mobile').slideUp();
   }
 }
 
 function catalogFilter() {
-
-
   const container = $('.current-vacancies__current-filters-list');
 
   $('.current-vacancies__filter').each(function () {
@@ -490,9 +497,6 @@ function catalogFilter() {
     }
   });
 
-
-
-
   window.addEventListener('resize', () => {
     if ($(window).width() < 769) {
       modalFiltersCalc();
@@ -543,7 +547,7 @@ function catalogFilterModal() {
     filterBtn.classList.add('active');
     filterBox.classList.add('active');
     document.body.style.overflow = 'hidden';
-    modalFiltersCalc()
+    modalFiltersCalc();
   });
   filterCloseBtn.addEventListener('click', () => {
     filterBtn.classList.remove('active');
@@ -558,4 +562,65 @@ function catalogFilterModal() {
       document.body.style.overflow = '';
     }
   });
+}
+
+function structuralFeaturesSwiper() {
+  const swiperOurWorks = new Swiper('.structural-features__swiper', {
+    slidesPerView: 1,
+    // loop: true,
+    allowTouchMove: false,
+    // grabCursor: true,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+
+    navigation: {
+      nextEl: '.structural-features__swiper-btn--next',
+      prevEl: '.structural-features__swiper-btn--prev'
+    },
+
+    breakpoints: {}
+  });
+}
+
+function additionalFeaturesSwiper() {
+  const swiperOurWorks = new Swiper('.additional-features__swiper', {
+    slidesPerView: 1,
+    // loop: true,
+    allowTouchMove: false,
+    // grabCursor: true,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+
+    navigation: {
+      nextEl: '.additional-features__swiper-btn--next',
+      prevEl: '.additional-features__swiper-btn--prev'
+    },
+
+    breakpoints: {}
+  });
+}
+
+
+function systemCncTabs() {
+
+  const btn = document.querySelectorAll('.system-cnc__header-tab')
+  const content = document.querySelectorAll('.system-cnc__content-box')
+  const img = document.querySelectorAll('.system-cnc__img-box')
+
+  btn.forEach((item,i) => {
+    item.addEventListener('click', () => {
+    btn.forEach(item => item.classList.remove('active'))
+    content.forEach(item => item.classList.remove('active'))
+    img.forEach(item => item.classList.remove('active'))
+    item.classList.add('active')
+    img[i].classList.add('active')
+    content[i].classList.add('active')
+  })})
+ 
 }
