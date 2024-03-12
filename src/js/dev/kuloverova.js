@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     careerHeroSwiper();
   } catch {}
-
   try {
     catalogDropdownInputSearch();
   } catch {}
@@ -59,7 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
     additionalFeaturesSwiper();
   } catch {}
   try {
-    systemCncTabs() 
+    systemCncTabs();
+  } catch {}
+  try {
+    anchorTabs('.product-card-tabs__tab');
+  } catch {}
+  try {
+    anchorTabs('.about-us-tabs__tab');
+  } catch {}
+  try {
+    machineDevelopmentVideo();
+  } catch {}
+  try {
+    machineDevelopmentSwiper();
+  } catch {}
+  try {
+    spindleUnitSwiper();
+  } catch {}
+  try {
+    requirementsSwiper()
+  } catch {}
+  try {
+    specificationsTabs();
+  } catch {}
+  try {
+    specificationsBlockSlider();
   } catch {}
 });
 
@@ -606,21 +629,206 @@ function additionalFeaturesSwiper() {
   });
 }
 
-
 function systemCncTabs() {
+  const btn = document.querySelectorAll('.system-cnc__header-tab');
+  const content = document.querySelectorAll('.system-cnc__content-box');
+  const img = document.querySelectorAll('.system-cnc__img-box');
 
-  const btn = document.querySelectorAll('.system-cnc__header-tab')
-  const content = document.querySelectorAll('.system-cnc__content-box')
-  const img = document.querySelectorAll('.system-cnc__img-box')
-
-  btn.forEach((item,i) => {
+  btn.forEach((item, i) => {
     item.addEventListener('click', () => {
-    btn.forEach(item => item.classList.remove('active'))
-    content.forEach(item => item.classList.remove('active'))
-    img.forEach(item => item.classList.remove('active'))
-    item.classList.add('active')
-    img[i].classList.add('active')
-    content[i].classList.add('active')
-  })})
- 
+      btn.forEach((item) => item.classList.remove('active'));
+      content.forEach((item) => item.classList.remove('active'));
+      img.forEach((item) => item.classList.remove('active'));
+      item.classList.add('active');
+      img[i].classList.add('active');
+      content[i].classList.add('active');
+    });
+  });
 }
+
+function anchorTabs(selector) {
+  const btn = document.querySelectorAll(selector);
+
+  btn.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      btn.forEach((item) => item.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+}
+
+function machineDevelopmentVideo() {
+  const video = document.querySelector('.machine-development__video');
+  const videoBtn = document.querySelector('.machine-development__video-play');
+  videoBtn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play(); // Если видео на паузе, запускаем его
+      videoBtn.innerHTML = `  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.65 19.11V4.89C10.65 3.54 10.08 3 8.64 3H5.01C3.57 3 3 3.54 3 4.89V19.11C3 20.46 3.57 21 5.01 21H8.64C10.08 21 10.65 20.46 10.65 19.11Z" fill="#161717"/>
+      <path d="M21.0016 19.11V4.89C21.0016 3.54 20.4316 3 18.9916 3H15.3616C13.9316 3 13.3516 3.54 13.3516 4.89V19.11C13.3516 20.46 13.9216 21 15.3616 21H18.9916C20.4316 21 21.0016 20.46 21.0016 19.11Z" fill="#161717"/>
+      </svg>`;
+    } else {
+      video.pause(); // Если видео играет, ставим на паузу
+      videoBtn.innerHTML = `  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 11L0 21.3923L0 0.607696L18 11Z" fill="#161717" />
+    </svg>`;
+    }
+  });
+}
+
+function machineDevelopmentSwiper() {
+  const swiperOurWorks = new Swiper('.machine-development__swiper', {
+    slidesPerView: 1,
+    // loop: true,
+    allowTouchMove: false,
+    // grabCursor: true,
+    speed: 1000,
+
+    navigation: {
+      nextEl: '.machine-development__swiper-btn--next',
+      prevEl: '.machine-development__swiper-btn--prev'
+    },
+
+    breakpoints: {}
+  });
+}
+
+function spindleUnitSwiper() {
+  const swiperOurWorks = new Swiper('.spindle-unit__swiper', {
+    slidesPerView: 1,
+    // loop: true,
+    allowTouchMove: false,
+    // grabCursor: true,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+
+    navigation: {
+      nextEl: '.spindle-unit__swiper-btn--next',
+      prevEl: '.spindle-unit__swiper-btn--prev'
+    },
+
+    breakpoints: {}
+  });
+}
+
+function requirementsSwiper() {
+  const sliders = document.querySelectorAll('.requirements__swiper-slide');
+  let rows = Math.ceil(sliders.length / 2);
+  const counts = document.querySelectorAll('.requirements__swiper-slide-count');
+  counts.forEach((item, i) => {
+    item.textContent = (i + 1).toString().padStart(2, '0');
+  })
+  const swiper = new Swiper('.requirements__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(2),
+    grid: {
+      rows: 1
+    },
+    navigation: {
+      nextEl: '.requirements__swiper-btn--next',
+      prevEl: '.requirements__swiper-btn--prev'
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 6,
+        spaceBetween: 0,
+        grid: {
+          rows: rows
+        }
+      }
+    }
+  });
+}
+
+
+const specificationsTabs = () => {
+  const tabsContainer = document.querySelector('.specifications__tabs'),
+    tabs = tabsContainer.querySelectorAll('.specifications__tab'),
+    blocksContaienr = document.querySelector('.specifications__body'),
+    blocks = blocksContaienr.querySelectorAll('.specifications__block');
+
+  tabsContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('specifications__tab')) {
+      let activeTab = e.target,
+        blockName = activeTab.dataset.blockName;
+
+      tabs.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+
+      activeTab.classList.add('active');
+
+      blocks.forEach((block) => {
+        if (block.classList.contains(blockName)) {
+          block.classList.add('active');
+          return;
+        }
+
+        block.classList.remove('active');
+      });
+    }
+  });
+};
+
+const specificationsBlockSlider = () => {
+  const blocks = document.querySelectorAll('.specifications__block');
+
+  blocks.forEach((block, i) => {
+    let sliderTabsContainer = block.querySelector('.specifications__block-list'),
+      sliderTabs = sliderTabsContainer.querySelectorAll('.specifications__block-item'),
+      swiper = block.querySelector('.specifications__block-swiper');
+
+    const specificationsSwiper = new Swiper(swiper, {
+      direction: 'horizontal',
+      slidesPerGroup: 1,
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      initialSlide: 0,
+      // effect: 'fade',
+
+      breakpoints: {
+        768: {
+          direction: 'vertical',
+          slidesPerView: 1,
+          spaceBetween: 10,
+          initialSlide: 1
+        }
+      },
+
+
+
+      on: {
+        slideChange: function (swiper) {
+          let activeIndex = this.activeIndex;
+
+          sliderTabs.forEach((tab, i) => {
+            tab.classList.remove('active');
+
+            if (i == activeIndex) {
+              tab.classList.add('active');
+            }
+          });
+        }
+      }
+    });
+
+    sliderTabsContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('specifications__block-item')) {
+        let activeTab = e.target;
+
+        sliderTabs.forEach((tab, j) => {
+          if (tab == activeTab) {
+            specificationsSwiper.slideTo(j);
+            tab.classList.add('active');
+            return;
+          }
+
+          tab.classList.remove('active');
+        });
+      }
+    });
+  });
+};

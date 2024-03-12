@@ -225,7 +225,8 @@
   &__schedule-img-box {
     width: 171.2rem;
     height: 29.9rem;
-    & img {
+    & img,
+    & svg {
       width: 100%;
       height: 100%;
       object-fit: cover;
