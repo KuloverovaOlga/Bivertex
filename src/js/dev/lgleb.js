@@ -2,6 +2,7 @@ import '../components/areas';
 
 window.addEventListener('DOMContentLoaded', () => {
   newsDropdown();
+  promotionsAcc();
 });
 
 const newsDropdown = () => {
@@ -32,4 +33,35 @@ const newsDropdown = () => {
       }
     });
   }
+};
+
+const promotionsAcc = () => {
+  const accordion = document.querySelector('.promotions__block-acc'),
+    accordionItems = accordion.querySelectorAll('.promotions__block-acc--point'),
+    accordionImages = accordion.querySelectorAll('.promotions__block-acc--img'),
+    initHeight = accordionItems[0].clientHeight;
+
+  let activeIndex = 0;
+
+  accordion.addEventListener('click', (e) => {
+    let target = e.target;
+
+    if (target.classList.contains('promotions__block-acc--head')) {
+      let targetParent = target.closest('.promotions__block-acc--point');
+
+      accordionItems.forEach((item) => {
+        item.classList.remove('active');
+        item.style.maxHeight = `${initHeight}px`;
+      });
+
+      targetParent.classList.add('active');
+      targetParent.style.maxHeight = `${targetParent.scrollHeight + 40}px`;
+
+      accordionItems.forEach((item, i) => item.classList.contains('active') && (activeIndex = i));
+
+      accordionImages.forEach((img) => img.classList.remove('active'));
+
+      accordionImages[activeIndex].classList.add('active');
+    }
+  });
 };
