@@ -159,6 +159,12 @@
   }
 }
 
+.configurator-main {
+  & .arrow-top__arrow-box {
+    bottom: 17rem;
+  }
+}
+
 .slider-btn {
   width: 6.2rem;
   height: 6.2rem;

@@ -17,6 +17,7 @@ export function formFieldsInit(options = { viewPass: false }) {
     if (
       (targetElement.tagName === 'INPUT' &&
         targetElement.type !== 'file' &&
+        targetElement.type !== 'range' &&
         targetElement.type !== 'checkbox' &&
         targetElement.type !== 'radio' &&
         !targetElement.closest('.quantity') &&
