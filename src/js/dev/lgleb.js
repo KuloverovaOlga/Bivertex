@@ -43,6 +43,10 @@ const promotionsAcc = () => {
 
   let activeIndex = 0;
 
+  accordionItems.forEach((item) => {
+    item.classList.contains('active') && (item.style.maxHeight = `${item.scrollHeight + 60}px`);
+  });
+
   accordion.addEventListener('click', (e) => {
     let target = e.target;
 
