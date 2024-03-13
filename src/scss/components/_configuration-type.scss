@@ -11,6 +11,7 @@
   &__inner {
     display: flex;
     flex-direction: column;
+ 
     @include small-tablet {
       gap: 4.8rem;
     }
