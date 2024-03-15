@@ -359,6 +359,79 @@ function detNewsSwiper() {
   });
 }
 
+// function catalogDropdownInputSearch() {
+//   $('.form__dropdown_search').on('input', '.form__dropdown_top input', function () {
+//     if ($(this).val().trim() !== '') {
+//       setTimeout(() => {
+//         $(this).closest('.form__dropdown_search').find('.form__dropdown_top').addClass('open');
+//         $(this).closest('.form__item').addClass('active');
+//         $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideDown();
+//       }, 0);
+//     } else {
+//       $(this).closest('.form__dropdown_search').find('.form__dropdown_top').removeClass('open');
+//       $(this).closest('.form__item').removeClass('active');
+//       $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideUp();
+//     }
+//   });
+
+//   $('.form__dropdown_search').on('click', '.form__dropdown_top input', function () {
+//     if ($(this).val().trim() !== '') {
+//       setTimeout(() => {
+//         $(this).closest('.form__dropdown_search').find('.form__dropdown_top').addClass('open');
+//         $(this).closest('.form__item').addClass('active');
+//         $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideDown();
+//       }, 200);
+//     } else {
+//       $(this).closest('.form__dropdown_search').find('.form__dropdown_top').removeClass('open');
+//       $(this).closest('.form__item').removeClass('active');
+//       $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideUp();
+//     }
+//   });
+
+//   $('.form__dropdown_search').on('blur', '.form__dropdown_top input', function () {
+//     $(this).closest('.form__dropdown_search').find('.form__dropdown_top').removeClass('open');
+//     $(this).closest('.form__item').removeClass('active');
+//     $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideUp();
+//   });
+
+//   // Обработчик клика на элементе выпадающего списка
+//   $('.form__dropdown_search').on('click', '.form__dropdown_item', function () {
+//     // Проверка наличия родительского элемента .form__dropdown_search
+//     if ($(this).closest('.form__dropdown_search').length) {
+//       // Установка значения и стилей при выборе элемента в выпадающем списке с поиском
+//       $(this)
+//         .closest('.form__dropdown_search')
+//         .find('.form__dropdown_top input')
+//         .val($(this).find('.form__dropdown_item_name').text());
+//       $(this).closest('.form__dropdown_search').find('.form__dropdown_top input').focus();
+//     }
+//   });
+
+//   // Обработчик события нажатия клавиши в поле ввода
+//   $('.form__dropdown_search').on('keyup', '.form__dropdown_top input', function () {
+//     var value = $(this).val().toLowerCase();
+//     // Фильтрация элементов выпадающего списка по введенному значению
+//     $(this)
+//       .closest('.form__dropdown_search')
+//       .find('.form__dropdown_item')
+//       .filter(function () {
+//         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+//       });
+//   });
+
+//   document.querySelector('.current-vacancies__dropdown--close').addEventListener('click', () => {
+//     document.querySelector('.current-vacancies__input-wrapper input').value = '';
+//     document.querySelector('.current-vacancies__input-wrapper input').focus();
+//   });
+//   document.querySelector('.current-vacancies__dropdown--enter').addEventListener('click', (e) => {
+//     e.target.closest('.form__dropdown_top').classList.remove('open');
+
+//     if (e.target.closest('.form__dropdown_top').nextElementSibling.style.display === 'block') {
+//       $(e.target.closest('.form__dropdown_top').nextElementSibling).slideUp();
+//     }
+//   });
+// }
+
 function catalogDropdownInputSearch() {
   $('.form__dropdown_search').on('input', '.form__dropdown_top input', function () {
     if ($(this).val().trim() !== '') {
@@ -394,7 +467,7 @@ function catalogDropdownInputSearch() {
     $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideUp();
   });
 
-  // Обработчик клика на элементе выпадающего списка
+//   Обработчик клика на элементе выпадающего списка
   $('.form__dropdown_search').on('click', '.form__dropdown_item', function () {
     // Проверка наличия родительского элемента .form__dropdown_search
     if ($(this).closest('.form__dropdown_search').length) {
@@ -404,8 +477,17 @@ function catalogDropdownInputSearch() {
         .find('.form__dropdown_top input')
         .val($(this).find('.form__dropdown_item_name').text());
       $(this).closest('.form__dropdown_search').find('.form__dropdown_top input').focus();
+
+	  let href = $(this).find('.form__dropdown_item_name').data('href')
+	  console.log(href)
+	  $('.current-vacancies__dropdown--enter').attr('href', `${href}`);
     }
   });
+
+
+
+
+
 
   // Обработчик события нажатия клавиши в поле ввода
   $('.form__dropdown_search').on('keyup', '.form__dropdown_top input', function () {
