@@ -1,8 +1,12 @@
 import '../components/areas';
 
 window.addEventListener('DOMContentLoaded', () => {
-  newsDropdown();
-  promotionsAcc();
+  try {
+    newsDropdown();
+  } catch {}
+  try {
+    promotionsAcc();
+  } catch {}
 });
 
 const newsDropdown = () => {
@@ -39,7 +43,8 @@ const promotionsAcc = () => {
   const accordion = document.querySelector('.promotions__block-acc'),
     accordionItems = accordion.querySelectorAll('.promotions__block-acc--point'),
     accordionImages = accordion.querySelectorAll('.promotions__block-acc--img'),
-    initHeight = accordionItems[0].clientHeight;
+    initHeight = accordionItems[0].clientHeight,
+  btns = document.querySelectorAll('.promotions__btn');
 
   let activeIndex = 0;
 
@@ -67,5 +72,11 @@ const promotionsAcc = () => {
 
       accordionImages[activeIndex].classList.add('active');
     }
+  });
+
+  btns.forEach((item) => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
   });
 };

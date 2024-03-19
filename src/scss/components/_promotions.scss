@@ -97,9 +97,12 @@
       &--subtitle {
         margin-bottom: 2.4rem;
       }
-
-      button {
+      &--button {
         width: 100%;
+        &.active {
+          background: $dark-blue;
+          color: $white;
+        }
       }
     }
 
@@ -239,11 +242,15 @@
         padding: 1.6rem 2.4rem;
         border: 1px solid $dark-blue;
         border-radius: 1.6rem;
-
+        width: 100%;
+        transition: background-color 0.3s, border 0.3s;
         &:not(:last-child) {
           margin-bottom: 6rem;
         }
-
+        &.active {
+          border: 1px solid $turquoise;
+          background-color: $turquoise;
+        }
         div {
           &:first-child {
             width: 3.2rem;
