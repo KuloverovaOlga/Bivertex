@@ -107,6 +107,73 @@
     }
   }
 
+  // .additional-features__swiper-slide-point-box
+
+  &__swiper-slide-point-box {
+    position: absolute;
+    cursor: pointer;
+    &:hover {
+      .additional-features__swiper-slide-point-circle {
+      }
+      .additional-features__swiper-slide-point-text {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+      }
+    }
+  }
+
+  // .additional-features__swiper-slide-point-circle
+
+  &__swiper-slide-point-circle {
+    width: 6.4rem;
+    height: 6.4rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 3.2rem;
+      height: 3.2rem;
+      background: $white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // .additional-features__swiper-slide-point-text
+
+  &__swiper-slide-point-text {
+    position: absolute;
+    padding: 2.8rem 4.8rem;
+    border-radius: 3.2rem;
+    background: $white;
+    color: $black;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rem;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    width: 68.2rem;
+    transition: opacity 0.3s, visibility 0.3s, z-index 0.3s;
+    &::before {
+      width: 0.2rem;
+      height: 35rem;
+      background-color: $white;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+      content: '';
+    }
+  }
+
   // .additional-features__swiper-slide-desc
 
   &__swiper-slide-desc {

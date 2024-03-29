@@ -25465,53 +25465,173 @@ function specificationsTabs() {
     }
   });
 }
-function specificationsBlockSlider() {
-  const blocks = document.querySelectorAll('.specifications__block');
-  blocks.forEach((block, i) => {
-    let sliderTabsContainer = block.querySelector('.specifications__block-list'),
-      sliderTabs = sliderTabsContainer.querySelectorAll('.specifications__block-item'),
-      swiper = block.querySelector('.specifications__block-swiper');
-    const specificationsSwiper = new Swiper(swiper, {
-      direction: 'horizontal',
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      initialSlide: 0,
-      // effect: 'fade',
 
-      breakpoints: {
-        768: {
-          direction: 'vertical',
-          slidesPerView: 1,
-          spaceBetween: 10,
-          initialSlide: 1
-        }
-      },
-      on: {
-        slideChange: function (swiper) {
-          let activeIndex = this.activeIndex;
-          sliderTabs.forEach((tab, i) => {
-            tab.classList.remove('active');
-            if (i == activeIndex) {
-              tab.classList.add('active');
-            }
-          });
-        }
+// function specificationsBlockSlider() {
+//   const blocks = document.querySelectorAll('.specifications__block');
+
+//   blocks.forEach((block, i) => {
+//     let sliderTabsContainer = block.querySelector('.specifications__block-list'),
+//       sliderTabs = sliderTabsContainer.querySelectorAll('.specifications__block-item'),
+//       swiper = block.querySelector('.specifications__block-swiper');
+
+//     // const specificationsSwiper = new Swiper(swiper, {
+//     //   direction: 'horizontal',
+//     //   slidesPerGroup: 1,
+//     //   slidesPerView: 'auto',
+//     //   spaceBetween: 8,
+//     //   initialSlide: 0,
+//     //   // effect: 'fade',
+
+//     //   breakpoints: {
+//     //     768: {
+//     //       direction: 'vertical',
+//     //       slidesPerView: 1,
+//     //       spaceBetween: 10,
+//     //       initialSlide: 1
+//     //     }
+//     //   },
+
+//     //   on: {
+//     //     slideChange: function (swiper) {
+//     //       let activeIndex = this.activeIndex;
+
+//     //       sliderTabs.forEach((tab, i) => {
+//     //         tab.classList.remove('active');
+
+//     //         if (i == activeIndex) {
+//     //           tab.classList.add('active');
+//     //         }
+//     //       });
+//     //     }
+//     //   }
+//     // });
+
+//     // sliderTabsContainer.addEventListener('click', (e) => {
+//     //   if (e.target.classList.contains('specifications__block-item')) {
+//     //     let activeTab = e.target;
+
+//     //     sliderTabs.forEach((tab, j) => {
+//     //       if (tab == activeTab) {
+//     //         specificationsSwiper.slideTo(j);
+//     //         tab.classList.add('active');
+//     //         return;
+//     //       }
+
+//     //       tab.classList.remove('active');
+//     //     });
+//     //   }
+//     // });
+//   });
+// }
+
+function specificationsBlockSlider() {
+  const blockSpecifications = document.querySelector('.specifications__block.specifications'),
+    sliderTabsContainerSpecifications = blockSpecifications.querySelector('.specifications__block-list'),
+    sliderTabsSpecifications = sliderTabsContainerSpecifications.querySelectorAll('.specifications__block-item'),
+    swiperSpecifications = blockSpecifications.querySelector('.specifications__block-swiper');
+  const specificationsSwiper = new Swiper(swiperSpecifications, {
+    direction: 'horizontal',
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    initialSlide: 0,
+    // effect: 'fade',
+
+    breakpoints: {
+      768: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 10,
+        initialSlide: 1
       }
-    });
-    sliderTabsContainer.addEventListener('click', e => {
-      if (e.target.classList.contains('specifications__block-item')) {
-        let activeTab = e.target;
-        sliderTabs.forEach((tab, j) => {
-          if (tab == activeTab) {
-            specificationsSwiper.slideTo(j);
-            tab.classList.add('active');
-            return;
-          }
+    },
+    on: {
+      slideChange: function (swiper) {
+        let activeIndex = this.activeIndex;
+        sliderTabsSpecifications.forEach((tab, i) => {
           tab.classList.remove('active');
+          if (i == activeIndex) {
+            tab.classList.add('active');
+          }
         });
       }
-    });
+    }
+  });
+  sliderTabsContainerSpecifications.addEventListener('click', e => {
+    if (e.target.classList.contains('specifications__block-item')) {
+      let activeTab = e.target;
+      sliderTabsSpecifications.forEach((tab, j) => {
+        if (tab == activeTab) {
+          specificationsSwiper.slideTo(j);
+          tab.classList.add('active');
+          return;
+        }
+        tab.classList.remove('active');
+      });
+    }
+  });
+  const blockModes = document.querySelector('.specifications__block.modes'),
+    sliderTabsContainerModes = blockModes.querySelector('.specifications__block-list'),
+    sliderTabsModes = sliderTabsContainerModes.querySelectorAll('.specifications__block-item'),
+    swiperModes = blockModes.querySelector('.specifications__block-swiper');
+  const modesSwiper = new Swiper(swiperModes, {
+    direction: 'horizontal',
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    initialSlide: 0,
+    // effect: 'fade',
+
+    breakpoints: {
+      768: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 10,
+        initialSlide: 0
+      }
+    },
+    on: {
+      slideChange: function (swiper) {
+        let activeIndex = this.activeIndex;
+        sliderTabsModes.forEach((tab, i) => {
+          tab.classList.remove('active');
+          if (i == activeIndex) {
+            tab.classList.add('active');
+          }
+        });
+      }
+    }
+  });
+  sliderTabsContainerModes.addEventListener('click', e => {
+    if (e.target.classList.contains('specifications__block-item')) {
+      let activeTab = e.target;
+      sliderTabsModes.forEach((tab, j) => {
+        if (tab == activeTab) {
+          modesSwiper.slideTo(j);
+          tab.classList.add('active');
+          return;
+        }
+        tab.classList.remove('active');
+      });
+    }
+  });
+  const sliders = document.querySelectorAll('.specifications__characteristics-swiper-slide');
+  let rows = Math.ceil(sliders.length / 2);
+  const swiper = new Swiper('.specifications__characteristics-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: rem(2),
+    grid: {
+      rows: 1
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        grid: {
+          rows: rows
+        }
+      }
+    }
   });
 }
 function configuratorHeroSwiper() {
