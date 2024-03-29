@@ -1,12 +1,13 @@
+import Swiper from 'swiper';
+
 import '../components/areas';
 
 window.addEventListener('DOMContentLoaded', () => {
-  try {
-    newsDropdown();
-  } catch {}
-  try {
-    promotionsAcc();
-  } catch {}
+  Swipers();
+
+  newsDropdown();
+  promotionsAcc();
+  promotionBtns();
 });
 
 const newsDropdown = () => {
@@ -40,43 +41,60 @@ const newsDropdown = () => {
 };
 
 const promotionsAcc = () => {
-  const accordion = document.querySelector('.promotions__block-acc'),
-    accordionItems = accordion.querySelectorAll('.promotions__block-acc--point'),
-    accordionImages = accordion.querySelectorAll('.promotions__block-acc--img'),
-    initHeight = accordionItems[0].clientHeight,
-  btns = document.querySelectorAll('.promotions__btn');
+  if (document.querySelector('.promotions__block-acc')) {
+    const accordion = document.querySelector('.promotions__block-acc'),
+      accordionItems = accordion.querySelectorAll('.promotions__block-acc--point'),
+      accordionImages = accordion.querySelectorAll('.promotions__block-acc--img'),
+      initHeight = accordionItems[0].clientHeight;
 
-  let activeIndex = 0;
+    let activeIndex = 0;
 
-  accordionItems.forEach((item) => {
-    item.classList.contains('active') && (item.style.maxHeight = `${item.scrollHeight + 60}px`);
-  });
-
-  accordion.addEventListener('click', (e) => {
-    let target = e.target;
-
-    if (target.classList.contains('promotions__block-acc--head')) {
-      let targetParent = target.closest('.promotions__block-acc--point');
-
-      accordionItems.forEach((item) => {
-        item.classList.remove('active');
-        item.style.maxHeight = `${initHeight}px`;
-      });
-
-      targetParent.classList.add('active');
-      targetParent.style.maxHeight = `${targetParent.scrollHeight + 40}px`;
-
-      accordionItems.forEach((item, i) => item.classList.contains('active') && (activeIndex = i));
-
-      accordionImages.forEach((img) => img.classList.remove('active'));
-
-      accordionImages[activeIndex].classList.add('active');
-    }
-  });
-
-  btns.forEach((item) => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
+    accordionItems.forEach((item) => {
+      item.classList.contains('active') && (item.style.maxHeight = `${item.scrollHeight + 60}px`);
     });
-  });
+
+    accordion.addEventListener('click', (e) => {
+      let target = e.target;
+
+      if (target.classList.contains('promotions__block-acc--head')) {
+        let targetParent = target.closest('.promotions__block-acc--point');
+
+        accordionItems.forEach((item) => {
+          item.classList.remove('active');
+          item.style.maxHeight = `${initHeight}px`;
+        });
+
+        targetParent.classList.add('active');
+        targetParent.style.maxHeight = `${targetParent.scrollHeight + 40}px`;
+
+        accordionItems.forEach((item, i) => item.classList.contains('active') && (activeIndex = i));
+
+        accordionImages.forEach((img) => img.classList.remove('active'));
+
+        accordionImages[activeIndex].classList.add('active');
+      }
+    });
+  }
+};
+
+const promotionBtns = () => {
+  if (document.querySelector('.promotions')) {
+    const btns = document.querySelectorAll('.promotions__block-right--button');
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+      });
+    });
+  }
+};
+
+const Swipers = () => {
+  if (window.screen.width <= 768) {
+    const promotionMobileSwiper = new Swiper('.promotions__block-swiper', {
+      slidesPerView: 1.1,
+      slidesPerGroup: 1,
+      spaceBetween: 8
+    });
+  }
 };
