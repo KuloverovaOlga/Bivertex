@@ -304,7 +304,6 @@ function scroll() {
         behavior: 'smooth',
         block: 'start'
       });
-   
     });
   }
 }
@@ -467,7 +466,7 @@ function catalogDropdownInputSearch() {
     $(this).closest('.form__dropdown_search').find('.form__dropdown_bottom').slideUp();
   });
 
-//   Обработчик клика на элементе выпадающего списка
+  //   Обработчик клика на элементе выпадающего списка
   $('.form__dropdown_search').on('click', '.form__dropdown_item', function () {
     // Проверка наличия родительского элемента .form__dropdown_search
     if ($(this).closest('.form__dropdown_search').length) {
@@ -478,16 +477,11 @@ function catalogDropdownInputSearch() {
         .val($(this).find('.form__dropdown_item_name').text());
       $(this).closest('.form__dropdown_search').find('.form__dropdown_top input').focus();
 
-	  let href = $(this).find('.form__dropdown_item_name').data('href')
-	  console.log(href)
-	  $('.current-vacancies__dropdown--enter').attr('href', `${href}`);
+      let href = $(this).find('.form__dropdown_item_name').data('href');
+      console.log(href);
+      $('.current-vacancies__dropdown--enter').attr('href', `${href}`);
     }
   });
-
-
-
-
-
 
   // Обработчик события нажатия клавиши в поле ввода
   $('.form__dropdown_search').on('keyup', '.form__dropdown_top input', function () {
@@ -596,7 +590,6 @@ function catalogFilter() {
 
     $('.current-vacancies__filter').each(function () {
       if ($(this).text() === value) {
-       
         const input = $(this).find('input');
         input.prop('checked', false);
         container.find('.current-vacancies__current-filters-item').each(function () {
@@ -875,61 +868,189 @@ function specificationsTabs() {
   });
 }
 
+// function specificationsBlockSlider() {
+//   const blocks = document.querySelectorAll('.specifications__block');
+
+//   blocks.forEach((block, i) => {
+//     let sliderTabsContainer = block.querySelector('.specifications__block-list'),
+//       sliderTabs = sliderTabsContainer.querySelectorAll('.specifications__block-item'),
+//       swiper = block.querySelector('.specifications__block-swiper');
+
+//     // const specificationsSwiper = new Swiper(swiper, {
+//     //   direction: 'horizontal',
+//     //   slidesPerGroup: 1,
+//     //   slidesPerView: 'auto',
+//     //   spaceBetween: 8,
+//     //   initialSlide: 0,
+//     //   // effect: 'fade',
+
+//     //   breakpoints: {
+//     //     768: {
+//     //       direction: 'vertical',
+//     //       slidesPerView: 1,
+//     //       spaceBetween: 10,
+//     //       initialSlide: 1
+//     //     }
+//     //   },
+
+//     //   on: {
+//     //     slideChange: function (swiper) {
+//     //       let activeIndex = this.activeIndex;
+
+//     //       sliderTabs.forEach((tab, i) => {
+//     //         tab.classList.remove('active');
+
+//     //         if (i == activeIndex) {
+//     //           tab.classList.add('active');
+//     //         }
+//     //       });
+//     //     }
+//     //   }
+//     // });
+
+//     // sliderTabsContainer.addEventListener('click', (e) => {
+//     //   if (e.target.classList.contains('specifications__block-item')) {
+//     //     let activeTab = e.target;
+
+//     //     sliderTabs.forEach((tab, j) => {
+//     //       if (tab == activeTab) {
+//     //         specificationsSwiper.slideTo(j);
+//     //         tab.classList.add('active');
+//     //         return;
+//     //       }
+
+//     //       tab.classList.remove('active');
+//     //     });
+//     //   }
+//     // });
+//   });
+// }
+
 function specificationsBlockSlider() {
-  const blocks = document.querySelectorAll('.specifications__block');
+  const blockSpecifications = document.querySelector('.specifications__block.specifications'),
+    sliderTabsContainerSpecifications = blockSpecifications.querySelector('.specifications__block-list'),
+    sliderTabsSpecifications = sliderTabsContainerSpecifications.querySelectorAll(
+      '.specifications__block-item'
+    ),
+    swiperSpecifications = blockSpecifications.querySelector('.specifications__block-swiper');
 
-  blocks.forEach((block, i) => {
-    let sliderTabsContainer = block.querySelector('.specifications__block-list'),
-      sliderTabs = sliderTabsContainer.querySelectorAll('.specifications__block-item'),
-      swiper = block.querySelector('.specifications__block-swiper');
+  const specificationsSwiper = new Swiper(swiperSpecifications, {
+    direction: 'horizontal',
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    initialSlide: 0,
+    // effect: 'fade',
 
-    const specificationsSwiper = new Swiper(swiper, {
-      direction: 'horizontal',
-      slidesPerGroup: 1,
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      initialSlide: 0,
-      // effect: 'fade',
-
-      breakpoints: {
-        768: {
-          direction: 'vertical',
-          slidesPerView: 1,
-          spaceBetween: 10,
-          initialSlide: 1
-        }
-      },
-
-      on: {
-        slideChange: function (swiper) {
-          let activeIndex = this.activeIndex;
-
-          sliderTabs.forEach((tab, i) => {
-            tab.classList.remove('active');
-
-            if (i == activeIndex) {
-              tab.classList.add('active');
-            }
-          });
-        }
+    breakpoints: {
+      768: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 10,
+        initialSlide: 1
       }
-    });
+    },
 
-    sliderTabsContainer.addEventListener('click', (e) => {
-      if (e.target.classList.contains('specifications__block-item')) {
-        let activeTab = e.target;
+    on: {
+      slideChange: function (swiper) {
+        let activeIndex = this.activeIndex;
 
-        sliderTabs.forEach((tab, j) => {
-          if (tab == activeTab) {
-            specificationsSwiper.slideTo(j);
-            tab.classList.add('active');
-            return;
-          }
-
+        sliderTabsSpecifications.forEach((tab, i) => {
           tab.classList.remove('active');
+
+          if (i == activeIndex) {
+            tab.classList.add('active');
+          }
         });
       }
-    });
+    }
+  });
+
+  sliderTabsContainerSpecifications.addEventListener('click', (e) => {
+    if (e.target.classList.contains('specifications__block-item')) {
+      let activeTab = e.target;
+
+      sliderTabsSpecifications.forEach((tab, j) => {
+        if (tab == activeTab) {
+          specificationsSwiper.slideTo(j);
+          tab.classList.add('active');
+          return;
+        }
+
+        tab.classList.remove('active');
+      });
+    }
+  });
+
+  const blockModes = document.querySelector('.specifications__block.modes'),
+    sliderTabsContainerModes = blockModes.querySelector('.specifications__block-list'),
+    sliderTabsModes = sliderTabsContainerModes.querySelectorAll('.specifications__block-item'),
+    swiperModes = blockModes.querySelector('.specifications__block-swiper');
+
+  const modesSwiper = new Swiper(swiperModes, {
+    direction: 'horizontal',
+    slidesPerGroup: 1,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    initialSlide: 0,
+    // effect: 'fade',
+
+    breakpoints: {
+      768: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 10,
+        initialSlide: 0
+      }
+    },
+
+    on: {
+      slideChange: function (swiper) {
+        let activeIndex = this.activeIndex;
+
+        sliderTabsModes.forEach((tab, i) => {
+          tab.classList.remove('active');
+
+          if (i == activeIndex) {
+            tab.classList.add('active');
+          }
+        });
+      }
+    }
+  });
+
+  sliderTabsContainerModes.addEventListener('click', (e) => {
+    if (e.target.classList.contains('specifications__block-item')) {
+      let activeTab = e.target;
+
+      sliderTabsModes.forEach((tab, j) => {
+        if (tab == activeTab) {
+          modesSwiper.slideTo(j);
+          tab.classList.add('active');
+          return;
+        }
+        tab.classList.remove('active');
+      });
+    }
+  });
+
+  const sliders = document.querySelectorAll('.specifications__characteristics-swiper-slide');
+  let rows = Math.ceil(sliders.length / 2);
+  const swiper = new Swiper('.specifications__characteristics-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: rem(2),
+    grid: {
+      rows: 1
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        grid: {
+          rows: rows
+        }
+      }
+    }
   });
 }
 
@@ -985,7 +1106,6 @@ function priceBottomMeny() {
   const fromTop = window.innerWidth > 768 ? 100 : 0;
   const fromBottom = window.innerWidth > 768 ? 500 : 1500;
 
-
   if (scrollPosition >= fromTop) {
     header.classList.add('active');
   } else {
@@ -1011,7 +1131,7 @@ function configurationRange() {
     const minVal = slider.getAttribute('min');
 
     const val = `${((slider.value - minVal) / (maxVal - minVal)) * 98}%`;
-  
+
     tooltip.querySelector('span').textContent = slider.value;
     progress.style.width = val;
     thumb.style.left = val;
@@ -1021,7 +1141,6 @@ function configurationRange() {
       tooltip.style.right = '0';
       tooltip.style.transform = 'translate(0%, 100%)';
       textMax.style.opacity = '0';
-  
     } else if (slider.value <= +minVal + 5500) {
       textMin.style.opacity = '0';
       tooltip.style.left = '0';

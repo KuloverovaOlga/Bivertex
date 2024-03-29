@@ -310,4 +310,104 @@ body::before {
       }
     }
   }
+
+  // ----------------------------------------comparison-------------------------------------------
+  // ----------------------------------------comparison-------------------------------------------
+  // ----------------------------------------comparison-------------------------------------------
+
+  &--comparison {
+    padding-top: 10rem;
+    & .popup__wrapper {
+      position: relative;
+    }
+    & .popup__content {
+    }
+    & .popup__body {
+      padding: 0;
+      width: 95.4rem;
+      border-radius: 1.2rem;
+      // overflow: hidden;
+      @include small-tablet {
+        width: 100%;
+        border-radius: 2.4rem;
+      }
+    }
+    & .popup__body-close-btn {
+      position: absolute;
+      top: -7rem;
+      right: -30rem;
+      width: 6.2rem;
+      height: 6.2rem;
+      & svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @include small-tablet {
+        right: 0;
+        width: 9.2rem;
+        height: 9.2rem;
+        top: -10rem;
+      }
+    }
+    & .popup__body-table {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    & .popup__body-table-title-row {
+      background-color: $turquoise;
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr;
+      gap: 1.2rem;
+      padding: 2.4rem 4rem;
+      border-radius: 1.2rem 1.2rem 0 0;
+      align-items: center;
+      @include small-tablet {
+        grid-template-columns: 2fr 1fr 1fr;
+        padding: 3.2rem;
+        border-radius: 2.4rem 2.4rem 0 0;
+        gap: 2.4rem;
+      }
+    }
+    & .popup__body-table-title {
+      @include small-tablet {
+        font-size: 3.2rem;
+      }
+    }
+    & .popup__body-table-name {
+      @include small-tablet {
+        font-size: 3.2rem;
+      }
+    }
+    & .popup__body-table-info-row {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr;
+      gap: 2rem;
+      padding: 2.4rem 4rem;
+      align-items: center;
+      &:not(:last-of-type) {
+        border-bottom: 0.1rem solid $grew;
+        @include small-tablet {
+          border-bottom: 0.2rem solid $grew;
+        }
+      }
+      @include small-tablet {
+        padding: 3.2rem;
+      }
+    }
+    & .popup__body-table-info-title {
+      @include small-tablet {
+        font-size: 2.8rem;
+      }
+    }
+    & .popup__body-table-info {
+      @include small-tablet {
+        font-size: 2.8rem;
+      }
+    }
+    & .popup__body-table-info-big {
+      grid-column: 2/4;
+    }
+  }
 }

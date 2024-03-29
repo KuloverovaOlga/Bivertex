@@ -830,6 +830,83 @@
   </div>
 </div>
 
+<div id="popup-comparison" aria-hidden="true" class="popup popup--comparison">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__body">
+        <button data-close="" type="button" class="popup__body-close-btn">
+          <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.75" y="0.75" width="60.5" height="60.5" rx="7.25" stroke="white" stroke-width="1.5"></rect>
+            <g clip-path="url(#clip0_3215_28860)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M38.0588 25.0001L36.9982 23.9395L30.9982 29.9395L24.9982 23.9395L23.9375 25.0001L29.9375 31.0001L23.9375 37.0001L24.9982 38.0608L30.9982 32.0608L36.9982 38.0608L38.0588 37.0001L32.0588 31.0001L38.0588 25.0001ZM30.9983 30L29.9982 31.0001L30.9983 32.0003L31.9985 31.0001L30.9983 30Z" fill="white"></path>
+            </g>
+            <defs>
+            <clipPath id="clip0_3215_28860">
+            <rect width="24" height="24" fill="white" transform="translate(19 19)"></rect>
+            </clipPath>
+            </defs>
+            </svg>
+        </button>
+        <div class="popup__body-table">
+          <div class="popup__body-table-title-row">
+            <p class="popup__body-table-title txt26 txt26_caps">параметры</p>
+            <p class="popup__body-table-name txt26 txt26_caps">HNC 808</p>
+            <p class="popup__body-table-name txt26 txt26_caps">HNC 848</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">
+              Количество одновременно управляемых осей
+            </p>
+            <p class="popup__body-table-info txt20">3</p>
+            <p class="popup__body-table-info txt20">5</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Жесткое нарезание резьбы</p>
+            <p class="popup__body-table-info txt20">+</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Ethernet</p>
+            <p class="popup__body-table-info txt20">+</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Системы координат заготовки</p>
+            <p class="popup__body-table-info popup__body-table-info-big txt20">
+              G54.1 — G54.60 Всего 60
+            </p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Компенсация ошибки шага и люфта</p>
+            <p class="popup__body-table-info txt20">+</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Термокомпенсация</p>
+            <p class="popup__body-table-info txt20">+</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Наноинтерполяция</p>
+            <p class="popup__body-table-info txt20">-</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Компенсация пространственной ошибки</p>
+            <p class="popup__body-table-info txt20">-</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+          <div class="popup__body-table-info-row">
+            <p class="popup__body-table-info-title txt20">Трехмерная защита от столкновений</p>
+            <p class="popup__body-table-info txt20">-</p>
+            <p class="popup__body-table-info txt20">+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="popup__success-demo" aria-hidden="true" class="popup popup--success">
   <div class="popup__wrapper">
     <div class="popup__content">
@@ -1299,8 +1376,8 @@
           <div class="system-cnc__content-title-box">
             <div class="system-cnc__content-title-text-box">
               <p class="system-cnc__content-title tl2">HNC 808</p>
-              <a href="" class="system-cnc__btn txt18 txt18_caps mobile">
-                параметры
+              <a href="" data-popup="#popup-comparison" class="system-cnc__btn txt18 txt18_caps mobile">
+                сравнение систем
                 <span class="system-cnc__link-svg-wrapper">
                   <span class="system-cnc__link-svg-box">
                     <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1352,8 +1429,8 @@
               </ul>
             </li>
           </ul>
-          <a href="" class="system-cnc__btn txt18 txt18_caps desktop">
-            параметры
+          <a href="" data-popup="#popup-comparison" class="system-cnc__btn txt18 txt18_caps desktop">
+            сравнение систем
             <span class="system-cnc__link-svg-wrapper">
               <span class="system-cnc__link-svg-box">
                 <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1374,8 +1451,8 @@
           <div class="system-cnc__content-title-box">
             <div class="system-cnc__content-title-text-box">
               <p class="system-cnc__content-title tl2">HNC 848</p>
-              <a href="" class="system-cnc__btn txt18 txt18_caps mobile">
-                параметры
+              <a href="" data-popup="#popup-comparison" class="system-cnc__btn txt18 txt18_caps mobile">
+                сравнение систем
                 <span class="system-cnc__link-svg-wrapper">
                   <span class="system-cnc__link-svg-box">
                     <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1427,8 +1504,8 @@
               </ul>
             </li>
           </ul>
-          <a href="" class="system-cnc__btn txt18 txt18_caps desktop">
-            параметры
+          <a href="" data-popup="#popup-comparison" class="system-cnc__btn txt18 txt18_caps desktop">
+            сравнение систем
             <span class="system-cnc__link-svg-wrapper">
               <span class="system-cnc__link-svg-box">
                 <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1466,8 +1543,18 @@
         <div class="additional-features__swiper-wrapper swiper-wrapper">
           <div class="additional-features__swiper-slide swiper-slide">
             <div class="additional-features__swiper-slide-inner">
-              <div class="additional-features__swiper-slide-img-box">
+              <div class="additional-features__swiper-slide-img-box desktop">
                 <img src="./assets/images/additional-features.webp" class="" alt="">
+              </div>
+              <div class="additional-features__swiper-slide-img-box mobile">
+                <img src="./assets/images/additional-features-mob.webp" class="" alt="">
+              </div>
+
+              <div class="additional-features__swiper-slide-point-box mobile" style="bottom: 15.5rem; right: 34rem">
+                <div class="additional-features__swiper-slide-point-circle"></div>
+                <div class="additional-features__swiper-slide-point-text txt16">
+                  BEAVERMILL оснащен масляным чиллером
+                </div>
               </div>
 
               <div class="additional-features__swiper-slide-desc-box">
@@ -1481,8 +1568,11 @@
           </div>
           <div class="additional-features__swiper-slide swiper-slide">
             <div class="additional-features__swiper-slide-inner">
-              <div class="additional-features__swiper-slide-img-box">
+             <div class="additional-features__swiper-slide-img-box desktop">
                 <img src="./assets/images/additional-features.webp" class="" alt="">
+              </div>
+              <div class="additional-features__swiper-slide-img-box mobile">
+                <img src="./assets/images/additional-features-mob.webp" class="" alt="">
               </div>
 
               <div class="additional-features__swiper-slide-desc-box">
@@ -1497,8 +1587,11 @@
           </div>
           <div class="additional-features__swiper-slide swiper-slide">
             <div class="additional-features__swiper-slide-inner">
-              <div class="additional-features__swiper-slide-img-box">
+             <div class="additional-features__swiper-slide-img-box desktop">
                 <img src="./assets/images/additional-features.webp" class="" alt="">
+              </div>
+              <div class="additional-features__swiper-slide-img-box mobile">
+                <img src="./assets/images/additional-features-mob.webp" class="" alt="">
               </div>
 
               <div class="additional-features__swiper-slide-desc-box">
@@ -1613,9 +1706,7 @@
                         <p class="specifications__block-text txt16">
                           12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
                         </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
+                  
                         <p class="specifications__block-text txt16">
                           30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
                         </p>
@@ -1636,9 +1727,7 @@
                         <p class="specifications__block-text txt16">
                           12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
                         </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
+                  
                         <p class="specifications__block-text txt16">
                           30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
                         </p>
@@ -1661,9 +1750,7 @@
                         <p class="specifications__block-text txt16">
                           12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
                         </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
+                  
                         <p class="specifications__block-text txt16">
                           30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
                         </p>
@@ -1699,9 +1786,7 @@
                         <p class="specifications__block-text txt16">
                           12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
                         </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
+                  
                         <p class="specifications__block-text txt16">
                           30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
                         </p>
@@ -1722,9 +1807,7 @@
                         <p class="specifications__block-text txt16">
                           12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
                         </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
+                  
                         <p class="specifications__block-text txt16">
                           30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
                         </p>
@@ -1751,7 +1834,7 @@
                     <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
                   </svg>
                 </div>
-                <div>ШПИНДЕЛЬ С КОНУСОМ BT30</div>
+                <div>Алюминий Д16Т</div>
               </li>
               <li class="specifications__block-item txt26 txt26__caps">
                 <div>
@@ -1760,122 +1843,115 @@
                     <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
                   </svg>
                 </div>
-                <div>АВТОМАТИЧЕСКОЕ УСТРОЙСТВО СМЕНЫ ИНСТРУМЕНТА</div>
-              </li>
-              <li class="specifications__block-item txt26 txt26__caps">
-                <div>
-                  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.68637 12.0001L22.8996 12.0001" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <div>СКОРОСТИ</div>
-              </li>
-              <li class="specifications__block-item txt26 txt26__caps">
-                <div>
-                  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.68637 12.0001L22.8996 12.0001" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <div>ОБЩАЯ ИНФОРМАЦИЯ</div>
+                <div>Сталь 40Х</div>
               </li>
             </ul>
           </div>
           <div class="specifications__block-slider">
-            <div class="specifications__block-swiper swiper">
+            <div class="specifications__block-swiper specifications__block-swiper--modes swiper">
               <div class="swiper-wrapper">
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">ШПИНДЕЛЬ С КОНУСОМ BT30</div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
+                <div class="specifications__block_swiper-slide specifications__block_swiper-slide--modes swiper-slide">
+                  <div class="specifications__block-left specifications__block-left--modes">
+                    <div class="specifications__block-descr specifications__block-descr--modes">
+                      <p class="specifications__block-title txt20 txt20_caps mobile">Алюминий Д16Т</p>
+
+                      <ul class="specifications__block-modes-list">
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">1</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">D = 63 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">Vc = 600 м/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">n = 3031 об/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ar = 3 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">F = 3638 мм/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ae = 55 мм</li>
+                          </ul>
+                        </li>
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">2</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">D = 12 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">Vc = 350 м/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">n = 9284 об/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ar = 27 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">F = 4177 мм/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ae = 3 мм</li>
+                          </ul>
+                        </li>
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">3</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">
+                              максимальный размер резьбы М16
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">4</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">
+                              максимальный диаметр сверления 25 мм
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">
-                        АВТОМАТИЧЕСКОЕ УСТРОЙСТВО СМЕНЫ ИНСТРУМЕНТА
-                      </div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">СКОРОСТИ</div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
+                  <div class="specifications__block-middle specifications__block-middle--modes">
+                    <div class="specifications__block-img specifications__block-img--modes">
+                      <img src="./assets/images/specifications-modes.webp" alt="">
                     </div>
                   </div>
                 </div>
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">ОБЩАЯ ИНФОРМАЦИЯ</div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
+                <div class="specifications__block_swiper-slide specifications__block_swiper-slide--modes swiper-slide">
+                  <div class="specifications__block-left specifications__block-left--modes">
+                    <div class="specifications__block-descr specifications__block-descr--modes">
+                      <div class="specifications__block-title txt20 txt20_caps mobile">Сталь 40Х</div>
+                      <ul class="specifications__block-modes-list">
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">1</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">D = 63 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">Vc = 600 м/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">n = 3031 об/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ar = 3 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">F = 3638 мм/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ae = 55 мм</li>
+                          </ul>
+                        </li>
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">2</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">D = 12 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">Vc = 350 м/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">n = 9284 об/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ar = 27 мм</li>
+                            <li class="specifications__block-modes-item-item txt16">F = 4177 мм/мин</li>
+                            <li class="specifications__block-modes-item-item txt16">Ae = 3 мм</li>
+                          </ul>
+                        </li>
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">3</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">
+                              максимальный размер резьбы М16
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="specifications__block-modes-item">
+                          <p class="specifications__block-modes-item-num txt20 txt20_caps">4</p>
+                          <ul class="specifications__block-modes-item-list">
+                            <li class="specifications__block-modes-item-item txt16">
+                              максимальный диаметр сверления 25 мм
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
+                  <div class="specifications__block-middle specifications__block-middle--modes">
+                    <div class="specifications__block-img specifications__block-img--modes">
+                      <img src="./assets/images/specifications-modes.webp" alt="">
                     </div>
                   </div>
                 </div>
@@ -1883,110 +1959,48 @@
             </div>
           </div>
         </div>
-        <div class="specifications__block characteristics">
-          <div class="specifications__block-right desktop">
-            <ul class="specifications__block-list">
-              <li class="specifications__block-item txt26 txt26__caps">
-                <div>
-                  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.68637 12.0001L22.8996 12.0001" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <div>АВТОМАТИЧЕСКОЕ УСТРОЙСТВО СМЕНЫ ИНСТРУМЕНТА</div>
-              </li>
-              <li class="specifications__block-item txt26 txt26__caps">
-                <div>
-                  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.68637 12.0001L22.8996 12.0001" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <div>СКОРОСТИ</div>
-              </li>
-              <li class="specifications__block-item txt26 txt26__caps">
-                <div>
-                  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.68637 12.0001L22.8996 12.0001" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M15.1211 2.80761L24.3135 12L15.1211 21.1924" stroke="#013341" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <div>ОБЩАЯ ИНФОРМАЦИЯ</div>
-              </li>
-            </ul>
-          </div>
-          <div class="specifications__block-slider">
-            <div class="specifications__block-swiper swiper">
-              <div class="swiper-wrapper">
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">
-                        АВТОМАТИЧЕСКОЕ УСТРОЙСТВО СМЕНЫ ИНСТРУМЕНТА
-                      </div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
-                    </div>
+        <div class="specifications__block characteristics ">
+          <div class="specifications__characteristics-swiper swiper">
+            <div class="specifications__characteristics-swiper-wrapper swiper-wrapper">
+              <div class="specifications__characteristics-swiper-slide swiper-slide">
+                <div class="specifications__characteristics-swiper-slide-inner">
+                  <div class="specifications__characteristics-img-box">
+                    <img src="./assets/images/characteristics-3.webp" alt="">
                   </div>
                 </div>
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">СКОРОСТИ</div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
-                    </div>
+              </div>
+              <div class="specifications__characteristics-swiper-slide swiper-slide">
+                <div class="specifications__characteristics-swiper-slide-inner">
+                  <div class="specifications__characteristics-img-box">
+                    <img src="./assets/images/characteristics-2.webp" alt="">
                   </div>
                 </div>
-                <div class="specifications__block_swiper-slide swiper-slide">
-                  <div class="specifications__block-left">
-                    <div class="specifications__block-descr">
-                      <div class="specifications__block-title txt20 txt20_caps">ОБЩАЯ ИНФОРМАЦИЯ</div>
-                      <div class="specifications__block-text-box">
-                        <p class="specifications__block-text txt16">
-                          12 000 об/мин, ременный привод, 7,5 кВт, 58,8 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          15 000 об/мин, мотор-шпиндель, 7,5 кВт, 17,5 Н*м
-                        </p>
-                        <p class="specifications__block-text txt16">
-                          30 000 об/мин, мотор-шпиндель, 7,5 кВт, 4 Н*м
-                        </p>
-                      </div>
-                    </div>
+              </div>
+              <div class="specifications__characteristics-swiper-slide swiper-slide">
+                <div class="specifications__characteristics-swiper-slide-inner">
+                  <div class="specifications__characteristics-img-box">
+                    <img src="./assets/images/characteristics-1.webp" alt="">
                   </div>
-                  <div class="specifications__block-middle">
-                    <div class="specifications__block-img">
-                      <img src="./assets/images/specifications.webp" alt="">
-                    </div>
+                </div>
+              </div>
+              <div class="specifications__characteristics-swiper-slide swiper-slide">
+                <div class="specifications__characteristics-swiper-slide-inner">
+                  <div class="specifications__characteristics-img-box">
+                    <img src="./assets/images/characteristics-4.webp" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="specifications__characteristics-swiper-slide swiper-slide">
+                <div class="specifications__characteristics-swiper-slide-inner">
+                  <div class="specifications__characteristics-img-box">
+                    <img src="./assets/images/characteristics-5.webp" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="specifications__characteristics-swiper-slide swiper-slide">
+                <div class="specifications__characteristics-swiper-slide-inner">
+                  <div class="specifications__characteristics-img-box">
+                    <img src="./assets/images/characteristics-6.webp" alt="">
                   </div>
                 </div>
               </div>
