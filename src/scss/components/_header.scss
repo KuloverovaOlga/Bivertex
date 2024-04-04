@@ -505,8 +505,12 @@
     }
   }
   &__dropdown-swiper.swiper {
+    width: 100%;
     @include small-tablet {
       display: none;
+    }
+    & .swiper-slide {
+      // min-width: 33rem;
     }
   }
 
