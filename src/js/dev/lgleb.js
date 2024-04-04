@@ -84,8 +84,21 @@ const promotionBtns = () => {
     btns.forEach((btn) => {
       btn.addEventListener('click', () => {
         btn.classList.toggle('active');
+        if (btn.classList.contains('active')) {
+          btn.textContent = 'Опция включена'
+
+        } else {
+          btn.textContent = 'Включить опцию'
+        }
       });
     });
+
+   const btnsSvg = document.querySelectorAll('.promotions__block-right--button-service')
+   btnsSvg.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+    });
+  });
   }
 };
 
