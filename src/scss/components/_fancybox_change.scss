@@ -32,6 +32,21 @@
 .fancybox__footer {
     display: none;
 }
+
+.has-image {
+    & img {
+        width: 90%;
+        height: 90%;
+        border-radius: 1.2rem;
+    }
+    @include small-tablet {
+        & img {
+            width: 100%;
+            height: 100%;
+            border-radius: 2.4rem;
+        }
+    }
+}
 .is-horizontal .f-carousel__nav .f-button.is-prev, .is-horizontal .f-carousel__nav .f-button.is-next, .is-horizontal .fancybox__nav .f-button.is-prev, .is-horizontal .fancybox__nav .f-button.is-next {
 
     width: 6.2rem;
