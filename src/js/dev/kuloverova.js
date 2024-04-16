@@ -3,12 +3,15 @@ import form from '../utils/form';
 import 'inputmask';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import { gsap, ScrollTrigger, Draggable, MotionPathPlugin, ScrollToPlugin } from 'gsap/all';
 
 export const modules = {};
 window.$ = window.jQuery = require('jquery');
 import { rem } from '../utils/constants';
 
 document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
   try {
     popup();
   } catch {}
@@ -97,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     configurationRange();
+  } catch {}
+  try {
+    if (window.innerWidth > 767)
+    animBlocks ()
   } catch {}
 });
 
@@ -1164,4 +1171,55 @@ function configurationRange() {
   btn.addEventListener('click', () => {
     $(schedule).slideToggle();
   });
+}
+
+function animBlocks () {
+gsap.utils.toArray('.item').forEach(function (elem) {
+  ScrollTrigger.create({
+    trigger: elem,
+    animation: gsap.from
+    (elem, {
+      keyframes: {
+        '0%': { scale: 0.95},
+        '50%': { scale: 1},
+        '100%': {  scale: 0.95 }
+      }
+    }
+    ),
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1, 
+    toggleActions: "play none reverse none",
+    // onEnter: function () {
+      
+    //   elem.classList.add('active')
+    // gsap.fromTo('.item', {scale: 0.9 }, {scale: 1});
+    // },
+
+    // onEnterBack: function () {
+    //   elem.classList.add('active');
+    // gsap.fromTo('.item', {scale: 0.9 }, {scale: 1});
+    // },
+    // onLeave: function () {
+    //   elem.classList.remove('active');
+    // gsap.fromTo('.item', {scale: 1 }, {scale: 0.9});
+    // },
+    // onLeaveBack: function () {
+    //   elem.classList.remove('active');
+    // gsap.fromTo('.item', {scale: 1 }, {scale: 0.9});
+    // }
+  });
+
+  // function slideIn(elem) {
+  //   gsap.to(elem, {
+  //     // y: '150%',
+  //     // scrollTo: {offsetY: 50},
+  //     // scale: 1,
+  //     // duration: 1.5,
+  //     // stagger: 1.5,
+  //     // overwrite: 'none',
+  //     // delay: 0
+  //   });
+  // }
+});
 }
