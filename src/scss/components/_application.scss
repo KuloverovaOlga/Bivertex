@@ -25,6 +25,10 @@
       border-radius: 4rem 4rem 0 0;
       gap: 4.8rem;
     }
+
+    &--longer {
+      padding: 12.5rem 12.4rem 8rem 10rem;
+    }
   }
 
   // .application__title
@@ -41,6 +45,9 @@
     }
     &--long {
       width: 59.9rem;
+    }
+    &--longer {
+      width: 100%;
     }
   }
 
@@ -70,6 +77,9 @@
 
   &__form-title {
     width: 25rem;
+    &--long {
+      width: 100%;
+    }
     @include small-tablet {
       width: 100%;
     }
