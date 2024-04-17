@@ -1190,36 +1190,7 @@ gsap.utils.toArray('.item').forEach(function (elem) {
     end: "bottom top",
     scrub: 1, 
     toggleActions: "play none reverse none",
-    // onEnter: function () {
-      
-    //   elem.classList.add('active')
-    // gsap.fromTo('.item', {scale: 0.9 }, {scale: 1});
-    // },
 
-    // onEnterBack: function () {
-    //   elem.classList.add('active');
-    // gsap.fromTo('.item', {scale: 0.9 }, {scale: 1});
-    // },
-    // onLeave: function () {
-    //   elem.classList.remove('active');
-    // gsap.fromTo('.item', {scale: 1 }, {scale: 0.9});
-    // },
-    // onLeaveBack: function () {
-    //   elem.classList.remove('active');
-    // gsap.fromTo('.item', {scale: 1 }, {scale: 0.9});
-    // }
   });
-
-  // function slideIn(elem) {
-  //   gsap.to(elem, {
-  //     // y: '150%',
-  //     // scrollTo: {offsetY: 50},
-  //     // scale: 1,
-  //     // duration: 1.5,
-  //     // stagger: 1.5,
-  //     // overwrite: 'none',
-  //     // delay: 0
-  //   });
-  // }
 });
 }
