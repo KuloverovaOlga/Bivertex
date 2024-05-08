@@ -102,8 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     configurationRange();
   } catch {}
   try {
-    if (window.innerWidth > 767)
-    animBlocks ()
+    if (window.innerWidth > 768) {
+      animBlocks();
+    }
+  } catch {}
+  try {
+    burgerLk();
   } catch {}
 });
 
@@ -1173,24 +1177,43 @@ function configurationRange() {
   });
 }
 
-function animBlocks () {
-gsap.utils.toArray('.item').forEach(function (elem) {
-  ScrollTrigger.create({
-    trigger: elem,
-    animation: gsap.from
-    (elem, {
-      keyframes: {
-        '0%': { scale: 0.95},
-        '50%': { scale: 1},
-        '100%': {  scale: 0.95 }
-      }
-    }
-    ),
-    start: "top bottom",
-    end: "bottom top",
-    scrub: 1, 
-    toggleActions: "play none reverse none",
-
+function animBlocks() {
+  gsap.utils.toArray('.item').forEach(function (elem) {
+    ScrollTrigger.create({
+      trigger: elem,
+      animation: gsap.from(elem, {
+        keyframes: {
+          '0%': { scale: 0.95 },
+          '50%': { scale: 1 },
+          '100%': { scale: 0.95 }
+        }
+      }),
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: 1,
+      toggleActions: 'play none reverse none'
+    });
   });
-});
+}
+
+function burgerLk() {
+  const trigger = document.querySelector('.lk__title-box');
+  const closeBtn = document.querySelector('.lk__nav-mob-burger');
+  const menu = document.querySelector('.lk__nav-wrapper');
+
+  trigger.addEventListener('click', () => {
+    menu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  closeBtn.addEventListener('click', () => {
+    menu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      menu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
 }
