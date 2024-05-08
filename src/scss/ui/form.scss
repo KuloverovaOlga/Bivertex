@@ -19,6 +19,13 @@
   }
 }
 
+.input-group .input--password {
+  padding-right: 5rem;
+  @include small-tablet {
+    padding-right: 10rem;
+  }
+}
+
 .input-group--mob-white input,
 .input-group--mob-white textarea {
   @include small-tablet {
