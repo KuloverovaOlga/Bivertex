@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
   newsDropdown();
   promotionsAcc();
   promotionBtns();
+
+  document.querySelector('.lk__applications') && lkApplications();
 });
 
 const newsDropdown = () => {
@@ -85,20 +87,90 @@ const promotionBtns = () => {
       btn.addEventListener('click', () => {
         btn.classList.toggle('active');
         if (btn.classList.contains('active')) {
-          btn.textContent = 'Опция включена'
-
+          btn.textContent = 'Опция включена';
         } else {
-          btn.textContent = 'Включить опцию'
+          btn.textContent = 'Включить опцию';
         }
       });
     });
 
-   const btnsSvg = document.querySelectorAll('.promotions__block-right--button-service')
-   btnsSvg.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
+    const btnsSvg = document.querySelectorAll('.promotions__block-right--button-service');
+    btnsSvg.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+      });
     });
-  });
+  }
+};
+
+const lkApplications = () => {
+  if (window.screen.width > 768) {
+    const tabsContainer = document.querySelector('.lk__applications-tabs.desktop'),
+      tabs = tabsContainer.querySelectorAll('.lk__applications-tab'),
+      lists = document.querySelectorAll('.lk__applications-list');
+
+    let activeIndex = 0;
+
+    tabsContainer.addEventListener('click', (e) => {
+      const target = e.target;
+
+      if (target.classList.contains('lk__applications-tab')) {
+        tabs.forEach((tab, i) => {
+          tab == target && (activeIndex = i);
+
+          tab.classList.remove('active');
+        });
+
+        lists.forEach((list, i) => {
+          console.log(i, activeIndex);
+
+          i == activeIndex ? list.classList.add('active') : list.classList.remove('active');
+        });
+
+        target.classList.add('active');
+      }
+    });
+  } else {
+    const tabsContainer = document.querySelector('.lk__applications-tabs.mobile'),
+      tabsList = tabsContainer.querySelector('.lk__applications-tabs--list'),
+      tabsHead = tabsContainer.querySelector('.lk__applications-tabs--head'),
+      tabsHeadText = tabsContainer.querySelector('.lk__applications-tabs--text'),
+      tabs = tabsContainer.querySelectorAll('.lk__applications-tabs--item'),
+      lists = document.querySelectorAll('.lk__applications-list'),
+      initHeight = tabsContainer.clientHeight;
+
+    let activeIndex = 0;
+
+    tabsContainer.addEventListener('click', (e) => {
+      const target = e.target;
+
+      if (target.classList.contains('lk__applications-tabs--head')) {
+        tabsContainer.classList.toggle('active');
+
+        tabsContainer.classList.contains('active')
+          ? (tabsContainer.style.maxHeight = `${tabsContainer.scrollHeight}px`)
+          : (tabsContainer.style.maxHeight = `${initHeight}px`);
+      }
+
+      if (target.classList.contains('lk__applications-tabs--item')) {
+        tabs.forEach((tab, i) => {
+          if (tab == target) {
+            activeIndex = i;
+
+            tabsHeadText.textContent = tab.textContent;
+          }
+
+          tabsContainer.classList.remove('active');
+          tabsContainer.style.maxHeight = `${initHeight}px`;
+        });
+
+        lists.forEach((list) => {
+          list.classList.remove('active');
+        });
+
+        lists[activeIndex].classList.add('active');
+      }
+    });
   }
 };
 
