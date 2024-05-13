@@ -109,6 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     burgerLk();
   } catch {}
+  try {
+    lkTabs() 
+  } catch {}
 });
 
 function phoneMask() {
@@ -1216,4 +1219,50 @@ function burgerLk() {
       document.body.style.overflow = '';
     }
   });
+}
+
+function lkTabs() {
+  const btnsDesk = document.querySelectorAll('.lk-create__btn-box--desktop .lk-create__btn')
+  const btnsMob = document.querySelectorAll('.lk-create__btn-box--mobile .lk-create__btn')
+
+  const forms = document.querySelectorAll('.lk-create__form')
+  const top = document.querySelector('.lk-create__btn-top')
+  const bottom = document.querySelector('.lk-create__btn-bottom')
+
+
+
+  btnsDesk.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      btnsDesk.forEach((btn) => {btn.classList.remove('active')})
+      forms.forEach((form) => {form.classList.remove('active')})
+      btnsMob.forEach((btn) => {btn.classList.remove('active')})
+      item.classList.add('active')
+      forms[i].classList.add('active')
+      btnsMob[i].classList.add('active')
+      top.querySelector('span').textContent = item.textContent
+    })
+
+  })
+
+  btnsMob.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      btnsMob.forEach((btn) => {btn.classList.remove('active')})
+      btnsDesk.forEach((btn) => {btn.classList.remove('active')})
+      forms.forEach((form) => {form.classList.remove('active')})
+      btnsDesk[i].classList.add('active')
+      item.classList.add('active')
+      forms[i].classList.add('active')
+      $(bottom).slideToggle()
+
+      top.querySelector('span').textContent = item.textContent
+    })
+
+  })
+
+
+  top.addEventListener('click', () => {
+    $(bottom).slideToggle()
+    $(this).toggleClass('active')
+  })
+
 }

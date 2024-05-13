@@ -58,7 +58,7 @@ const areasBlockSlider = () => {
           direction: 'vertical',
           slidesPerView: 1,
           spaceBetween: 10,
-          initialSlide: 1
+          initialSlide: 1,
         }
       },
 

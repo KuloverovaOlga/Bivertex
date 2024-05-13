@@ -61,6 +61,7 @@
     .swiper-slide {
       display: flex;
       justify-content: space-between;
+      // height: auto;
     }
 
     &-left {
@@ -98,6 +99,11 @@
 
     &-text {
       margin-bottom: 4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
     }
 
     &-link {
@@ -107,7 +113,7 @@
       position: relative;
       @include small-tablet {
         &:hover {
-          & .areas__block-link-svg-box  {
+          & .areas__block-link-svg-box {
             &:nth-child(1) {
               transform: translate(0, 0);
             }
@@ -117,7 +123,6 @@
           }
         }
       }
-
 
       &:hover {
         & .areas__block-link-svg-box {
@@ -297,10 +302,17 @@
       &-right {
         display: none;
       }
-
+      .swiper-slide {
+        height: auto;
+      }
       &-middle,
       &-left {
         width: auto;
+      }
+      &-left {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
       }
 
       &-slider {
@@ -325,6 +337,9 @@
 
       &-descr {
         padding: 3.2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
       }
 
       &-title {
@@ -345,6 +360,7 @@
       }
 
       &-link {
+        margin-top: auto;
         div {
           &:first-child {
             font-size: 2.4rem;
