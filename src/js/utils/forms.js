@@ -131,7 +131,7 @@ export let formValidate = {
       } else {
         this.removeError(formRequiredItem);
       }
-    }else {
+    } else {
       if (!formRequiredItem.value.trim()) {
         this.addError(formRequiredItem);
         error++;
@@ -159,7 +159,7 @@ export let formValidate = {
     formRequiredItem.classList.remove('_form-error');
     formRequiredItem.parentElement.classList.remove('_form-error');
     const error = formRequiredItem.parentElement.parentElement.querySelector('.error-span');
-    error.classList.remove('active');
+    error?.classList.remove('active');
     if (formRequiredItem.parentElement.querySelector('.form__error')) {
       formRequiredItem.parentElement.removeChild(
         formRequiredItem.parentElement.querySelector('.form__error')
