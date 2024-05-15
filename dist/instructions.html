@@ -1342,6 +1342,108 @@
   </div>
 </div>
 
+<div id="popup__application" aria-hidden="true" class="popup popup--big">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__body">
+        <button data-close="" type="button" class="popup__body-close-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5285 2.53044L15.0588 2.00011L13.9982 0.939453L13.4678 1.46978L7.99816 6.93945L2.52849 1.46978L1.99816 0.939453L0.9375 2.00011L1.46783 2.53044L6.9375 8.00011L1.46783 13.4698L0.9375 14.0001L1.99816 15.0608L2.52849 14.5304L7.99816 9.06077L13.4678 14.5304L13.9982 15.0608L15.0588 14.0001L14.5285 13.4698L9.05882 8.00011L14.5285 2.53044ZM7.99831 6.99996L6.99816 8.00011L7.99831 9.00026L8.99846 8.00011L7.99831 6.99996Z" fill="#676767"></path>
+          </svg>
+        </button>
+        <div class="popup__body-content-box">
+          <div class="application__title-box">
+            <p class="application__title tl1">Продолжим вместе с бивертех?</p>
+            <p class="application__desc txt18 txt18_caps">
+              заполните форму и наши специалисты свяжутся с вами в ближайшее время
+            </p>
+          </div>
+          <form data-popup-message="#popup__success" data-dev="" action="" class="application__form-wrapper">
+            <p class="application__form-title tl3">оставьте нам заявку</p>
+            <div class="application__form-input-wrapper">
+              <div class="application__form-input-box">
+                <label class="application__label input-group input-group--mob-white">
+                  <span class="form__input-wrapper txt18">
+                    <input class="input--name application__form-input" type="text" placeholder="Ваше имя*" data-validate="" data-required="" autocomplete="off" name="form[]">
+                  </span>
+                  <span class="error-span">Поле заполнено неверно</span>
+                </label>
+                <label class="application__label input-group input-group--mob-white">
+                  <span class="form__input-wrapper">
+                    <input class="input--tel application__form-input phone-mask txt18" type="text" placeholder="Номер телефона*" data-validate="" data-required="tel" autocomplete="off" name="form[]">
+                  </span>
+                  <span class="error-span">Поле заполнено неверно</span>
+                </label>
+                <label class="application__label input-group input-group--mob-white">
+                  <span class="form__input-wrapper">
+                    <input class="input--mail application__form-input txt18" type="text" placeholder="E-mail*" data-validate="" data-required="email" autocomplete="off" name="form[]">
+                  </span>
+                  <span class="error-span">Поле заполнено неверно</span>
+                </label>
+                <label class="application__label input-group input-group--mob-white">
+                  <span class="form__input-wrapper">
+                    <textarea class="input--textarea txt18" placeholder="Ваш запрос" autocomplete="off" name="form[]"></textarea>
+                    <span class="error-span"></span>
+                  </span>
+                </label>
+              </div>
+              <p class="application__agreement-text txt-small">
+                Нажимая «Отправить» вы подтверждаете, что согласны на
+                <a href="#">обработку персональных данных</a>
+              </p>
+            </div>
+            <button type="submit" class="application__btn button button-black txt20 txt20_caps">
+              заказать станок
+            </button>
+          </form>
+          <div class="application__info-wrapper">
+            <div class="application__info-box">
+              <ul class="application__info-list">
+                <li class="application__info-item">
+                  <p class="application__info-link txt20 txt20_caps">
+                    115516, Россия, г. Москва, Тарный проезд, 11
+                  </p>
+                </li>
+                <li class="application__info-item">
+                  <a href="tel:+74992880398" class="application__info-link txt20 txt20_caps">+7 (499) 288-03-98</a>
+                </li>
+                <li class="application__info-item">
+                  <a href="mailto:info@beavertech.ru" class="application__info-link txt20 txt20_caps">info@beavertech.ru</a>
+                </li>
+              </ul>
+              <ul class="application__contacts-list">
+                <li class="application__contacts-item">
+                  <a href="#" class="application__contacts-link">
+                    <div class="application__contacts-link-svg-box">
+                      <img src="./assets/images/vk.svg" alt="" class="desktop">
+                      <img src="./assets/images/vk-black.svg" alt="" class="mobile">
+                    </div>
+                  </a>
+                </li>
+                <li class="application__contacts-item">
+                  <a href="#" class="application__contacts-link">
+                    <div class="application__contacts-link-svg-box">
+                      <img src="./assets/images/watsapp.svg" alt="" class="desktop">
+                      <img src="./assets/images/watsapp-black.svg" alt="" class="mobile">
+                    </div>
+                  </a>
+                </li>
+                <li class="application__contacts-item">
+                  <a href="#" class="application__contacts-link">
+                    <div class="application__contacts-link-svg-box">
+                      <img src="./assets/images/youtube.svg" alt="" class="desktop">
+                      <img src="./assets/images/youtube-black.svg" alt="" class="mobile">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       <main>
         <a href="#header" class="arrow-top__arrow-box nav-link">
   <div class="arrow-top__arrow-svg-box">
@@ -1614,7 +1716,7 @@
           </p>
         </div>
 
-        <button class="button button-turquoise txt20 txt20_caps">заявка</button>
+        <button class="button button-turquoise txt20 txt20_caps" data-popup="#popup__application">заявка</button>
       </div>
     </div>
     <div class="footer__bottom">
