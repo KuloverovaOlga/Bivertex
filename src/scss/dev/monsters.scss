@@ -6,6 +6,9 @@
 
 .promotions__test {
     overflow: hidden;
+    @media (max-width: 48em) {
+        display: none;
+    }
 }
 .promotions__baner-container {
     // position: relative;
@@ -24,6 +27,7 @@
     .promotions__banner-right--item {
         height: 80rem;
         overflow: hidden;
+        width: 54.7rem;
     }
     #triggerWrap {
         position: absolute;
@@ -35,5 +39,12 @@
             width: 100%;
             height: 80rem;
         }
+    }
+}
+.promotions__banner.mobile {
+    display: none;
+    
+    @media (max-width: 48em) {
+        display: flex;
     }
 }
