@@ -191,6 +191,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 3.2rem;
+        @include small-tablet {
+          border-radius: 0;
+        }
       }
     }
 

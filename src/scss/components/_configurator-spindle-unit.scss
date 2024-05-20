@@ -248,6 +248,13 @@
     transform: translateY(100%);
     color: $grew;
     transition: opacity 0.3s;
+
+    &.active {
+      color: #012028;
+      font-weight: 600;
+      line-height: 130%;
+      text-transform: uppercase;
+    }
   }
 
   // .configurator-spindle-unit__range-text--min

@@ -1135,7 +1135,7 @@ function configurationRange() {
   const container = document.querySelector('.configurator-spindle-unit__range');
   const slider = container.querySelector('.configurator-spindle-unit__range-input');
   const thumb = container.querySelector('.configurator-spindle-unit__range-thumb');
-  const tooltip = container.querySelector('.configurator-spindle-unit__range-tooltip');
+  // const tooltip = container.querySelector('.configurator-spindle-unit__range-tooltip');
   const progress = container.querySelector('.configurator-spindle-unit__range-progress');
   const textMin = container.querySelector('.configurator-spindle-unit__range-text--min');
   const textMax = container.querySelector('.configurator-spindle-unit__range-text--max');
@@ -1146,27 +1146,37 @@ function configurationRange() {
 
     const val = `${((slider.value - minVal) / (maxVal - minVal)) * 98}%`;
 
-    tooltip.querySelector('span').textContent = slider.value;
+    // tooltip.querySelector('span').textContent = slider.value;
     progress.style.width = val;
     thumb.style.left = val;
 
-    if (slider.value >= maxVal - 5500) {
-      tooltip.style.left = 'unset';
-      tooltip.style.right = '0';
-      tooltip.style.transform = 'translate(0%, 100%)';
-      textMax.style.opacity = '0';
-    } else if (slider.value <= +minVal + 5500) {
-      textMin.style.opacity = '0';
-      tooltip.style.left = '0';
-      tooltip.style.right = 'unset';
-      tooltip.style.transform = 'translate(0, 100%)';
+    console.log(slider.value);
+
+    if(slider.value == 1) {
+      $('.configurator-spindle-unit__range-text--min').addClass('active')
+      $('.configurator-spindle-unit__range-text--max').removeClass('active')
     } else {
-      tooltip.style.left = '50%';
-      tooltip.style.right = 'unset';
-      tooltip.style.transform = 'translate(-50%, 100%)';
-      textMax.style.opacity = '1';
-      textMin.style.opacity = '1';
+      $('.configurator-spindle-unit__range-text--min').removeClass('active')
+      $('.configurator-spindle-unit__range-text--max').addClass('active')
     }
+
+    // if (slider.value >= maxVal - 5500) {
+    //   tooltip.style.left = 'unset';
+    //   tooltip.style.right = '0';
+    //   tooltip.style.transform = 'translate(0%, 100%)';
+    //   textMax.style.opacity = '0';
+    // } else if (slider.value <= +minVal + 5500) {
+    //   textMin.style.opacity = '0';
+    //   tooltip.style.left = '0';
+    //   tooltip.style.right = 'unset';
+    //   tooltip.style.transform = 'translate(0, 100%)';
+    // } else {
+    //   tooltip.style.left = '50%';
+    //   tooltip.style.right = 'unset';
+    //   tooltip.style.transform = 'translate(-50%, 100%)';
+    //   textMax.style.opacity = '1';
+    //   textMin.style.opacity = '1';
+    // }
   }
   customSwiper();
   slider.addEventListener('input', customSwiper);
