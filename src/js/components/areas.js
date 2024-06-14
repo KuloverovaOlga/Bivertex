@@ -44,6 +44,7 @@ const areasBlockSlider = () => {
       sliderTabs = sliderTabsContainer.querySelectorAll('.areas__block-item'),
       sliderNavigationBtns = block.querySelector('.areas__navigation'),
       swiper = block.querySelector('.areas__block-swiper');
+      sliderTabs[0].classList.add('active')
 
     const areasSwiper = new Swiper(swiper, {
       direction: 'horizontal',
@@ -58,7 +59,7 @@ const areasBlockSlider = () => {
           direction: 'vertical',
           slidesPerView: 1,
           spaceBetween: 10,
-          initialSlide: 1,
+          initialSlide: 0,
         }
       },
 
