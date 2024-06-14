@@ -47,32 +47,33 @@ const promotionsAcc = () => {
     const accordion = document.querySelector('.promotions__block-acc'),
       accordionItems = accordion.querySelectorAll('.promotions__block-acc--point'),
       accordionImages = accordion.querySelectorAll('.promotions__block-acc--img'),
+	  accordionHead = accordion.querySelectorAll('.promotions__block-acc--head'),
       initHeight = accordionItems[0].clientHeight;
-
     let activeIndex = 0;
-
-    accordionItems.forEach((item) => {
-      item.classList.contains('active') && (item.style.maxHeight = `${item.scrollHeight + 60}px`);
-    });
-
-    accordion.addEventListener('click', (e) => {
+	accordionItems.forEach(item => {
+		if(!item.classList.contains('active')) {
+			let rem = 0.005208335 * window.innerWidth * 4;
+			let test = item.querySelectorAll('.promotions__block-acc--head')[0].clientHeight + rem
+		  	item.style.maxHeight = `${test}px`;
+		}
+	});
+    // accordionItems.forEach(item => {
+    //   item.classList.contains('active') && (item.style.maxHeight = `${item.scrollHeight + 60}px`);
+    // });
+    accordion.addEventListener('click', e => {
       let target = e.target;
-
       if (target.classList.contains('promotions__block-acc--head')) {
         let targetParent = target.closest('.promotions__block-acc--point');
-
-        accordionItems.forEach((item) => {
+        accordionItems.forEach(item => {
+			let rem = 0.005208335 * window.innerWidth * 4;
+			let test = item.querySelectorAll('.promotions__block-acc--head')[0].clientHeight + rem
           item.classList.remove('active');
-          item.style.maxHeight = `${initHeight}px`;
+          item.style.maxHeight = `${test}px`;
         });
-
         targetParent.classList.add('active');
         targetParent.style.maxHeight = `${targetParent.scrollHeight + 40}px`;
-
         accordionItems.forEach((item, i) => item.classList.contains('active') && (activeIndex = i));
-
-        accordionImages.forEach((img) => img.classList.remove('active'));
-
+        accordionImages.forEach(img => img.classList.remove('active'));
         accordionImages[activeIndex].classList.add('active');
       }
     });
