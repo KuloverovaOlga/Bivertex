@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     lkTabs() 
   } catch {}
+  try {
+    additionalFeaturesMinSwiper () 
+  } catch {}
 });
 
 function phoneMask() {
@@ -1196,9 +1199,9 @@ function animBlocks() {
       trigger: elem,
       animation: gsap.from(elem, {
         keyframes: {
-          '0%': { scale: 0.95 },
+          '0%': { scale: 0.96 },
           '50%': { scale: 1 },
-          '100%': { scale: 0.95 }
+          '100%': { scale: 0.96 }
         }
       }),
       start: 'top bottom',
@@ -1275,4 +1278,27 @@ function lkTabs() {
     $(this).toggleClass('active')
   })
 
+}
+
+function additionalFeaturesMinSwiper () {
+  const swiperOurWorks = new Swiper('.additional-features-min__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(5),
+    loop: true,
+    grabCursor: true,
+    speed: 1000,
+    autoHeight: true,
+
+    navigation: {
+      nextEl: '.additional-features-min__swiper-btn--next',
+      prevEl: '.additional-features-min__swiper-btn--prev'
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        autoHeight: false,
+      }
+    }
+  });
 }
