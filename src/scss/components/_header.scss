@@ -78,6 +78,19 @@
       }
     }
 
+  // .header__cooperation-profile-box
+  & .header__cooperation-profile-box {
+  }
+  // .header__cooperation-profile-svg-box
+  & .header__cooperation-profile-svg-box {
+    & svg path {
+      stroke: $white;
+    }
+  }
+  // .header__cooperation-profile-text
+  & .header__cooperation-profile-text {
+    color: $white;
+  }
     &-career {
       @include small-tablet {
         & .header__inner-wrapper {
