@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     configurationRange();
   } catch {}
   try {
-    if (window.innerWidth > 768) {
+    // if (window.innerWidth > 768) {
       animBlocks();
-    }
+    // }
   } catch {}
   try {
     burgerLk();
@@ -1199,9 +1199,9 @@ function animBlocks() {
       trigger: elem,
       animation: gsap.from(elem, {
         keyframes: {
-          '0%': { scale: 0.96 },
-          '50%': { scale: 1 },
-          '100%': { scale: 0.96 }
+          '0%': { scale: 0.9 },
+          '40%': { scale: 1 },
+          '100%': { scale: 1 }
         }
       }),
       start: 'top bottom',
