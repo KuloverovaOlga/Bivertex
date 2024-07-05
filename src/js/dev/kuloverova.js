@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     machineDevelopmentSwiper();
   } catch {}
   try {
+    typicalSwiper();
+  } catch {}
+  try {
     spindleUnitSwiper();
   } catch {}
   try {
@@ -103,17 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     // if (window.innerWidth > 768) {
-      animBlocks();
+    animBlocks();
     // }
   } catch {}
   try {
     burgerLk();
   } catch {}
   try {
-    lkTabs() 
+    lkTabs();
   } catch {}
   try {
-    additionalFeaturesMinSwiper () 
+    additionalFeaturesMinSwiper();
   } catch {}
 });
 
@@ -248,7 +251,7 @@ function mainHeroSwiper() {
     },
 
     breakpoints: {
-      768: {
+      769: {
         autoplay: {
           delay: 60000
         }
@@ -283,7 +286,7 @@ function careerHeroSwiper() {
     },
 
     breakpoints: {
-      768: {
+      769: {
         // autoplay: {
         //   delay: 60000
         // }
@@ -367,7 +370,7 @@ function detNewsSwiper() {
     },
 
     breakpoints: {
-      768: {
+      769: {
         slidesPerView: 2,
         spaceBetween: rem(2)
       }
@@ -805,6 +808,31 @@ function machineDevelopmentSwiper() {
     breakpoints: {}
   });
 }
+function typicalSwiper() {
+  const swiperOurWorks = new Swiper('.typical-swiper__swiper', {
+    slidesPerView: 1,
+    autoHeight: true,
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    // grabCursor: true,
+    speed: 1000,
+
+    navigation: {
+      nextEl: '.typical-swiper__swiper-btn--next',
+      prevEl: '.typical-swiper__swiper-btn--prev'
+    },
+
+    breakpoints: {
+      769: {
+        autoHeight: false,
+        allowTouchMove: false,
+      }
+    }
+  });
+}
 
 function spindleUnitSwiper() {
   const swiperOurWorks = new Swiper('.spindle-unit__swiper', {
@@ -902,7 +930,7 @@ function specificationsTabs() {
 //     //   // effect: 'fade',
 
 //     //   breakpoints: {
-//     //     768: {
+//     //     769: {
 //     //       direction: 'vertical',
 //     //       slidesPerView: 1,
 //     //       spaceBetween: 10,
@@ -960,7 +988,7 @@ function specificationsBlockSlider() {
     // effect: 'fade',
 
     breakpoints: {
-      768: {
+      769: {
         direction: 'vertical',
         slidesPerView: 1,
         spaceBetween: 10,
@@ -1013,7 +1041,7 @@ function specificationsBlockSlider() {
     // effect: 'fade',
 
     breakpoints: {
-      768: {
+      769: {
         direction: 'vertical',
         slidesPerView: 1,
         spaceBetween: 10,
@@ -1086,7 +1114,7 @@ function configuratorHeroSwiper() {
     },
 
     breakpoints: {
-      768: {
+      769: {
         slidesPerView: 1
         // effect: 'fade',
         // fadeEffect: {
@@ -1155,12 +1183,12 @@ function configurationRange() {
 
     console.log(slider.value);
 
-    if(slider.value == 1) {
-      $('.configurator-spindle-unit__range-text--min').addClass('active')
-      $('.configurator-spindle-unit__range-text--max').removeClass('active')
+    if (slider.value == 1) {
+      $('.configurator-spindle-unit__range-text--min').addClass('active');
+      $('.configurator-spindle-unit__range-text--max').removeClass('active');
     } else {
-      $('.configurator-spindle-unit__range-text--min').removeClass('active')
-      $('.configurator-spindle-unit__range-text--max').addClass('active')
+      $('.configurator-spindle-unit__range-text--min').removeClass('active');
+      $('.configurator-spindle-unit__range-text--max').addClass('active');
     }
 
     // if (slider.value >= maxVal - 5500) {
@@ -1235,52 +1263,58 @@ function burgerLk() {
 }
 
 function lkTabs() {
-  const btnsDesk = document.querySelectorAll('.lk-create__btn-box--desktop .lk-create__btn')
-  const btnsMob = document.querySelectorAll('.lk-create__btn-box--mobile .lk-create__btn')
+  const btnsDesk = document.querySelectorAll('.lk-create__btn-box--desktop .lk-create__btn');
+  const btnsMob = document.querySelectorAll('.lk-create__btn-box--mobile .lk-create__btn');
 
-  const forms = document.querySelectorAll('.lk-create__form')
-  const top = document.querySelector('.lk-create__btn-top')
-  const bottom = document.querySelector('.lk-create__btn-bottom')
-
-
+  const forms = document.querySelectorAll('.lk-create__form');
+  const top = document.querySelector('.lk-create__btn-top');
+  const bottom = document.querySelector('.lk-create__btn-bottom');
 
   btnsDesk.forEach((item, i) => {
     item.addEventListener('click', () => {
-      btnsDesk.forEach((btn) => {btn.classList.remove('active')})
-      forms.forEach((form) => {form.classList.remove('active')})
-      btnsMob.forEach((btn) => {btn.classList.remove('active')})
-      item.classList.add('active')
-      forms[i].classList.add('active')
-      btnsMob[i].classList.add('active')
-      top.querySelector('span').textContent = item.textContent
-    })
-
-  })
+      btnsDesk.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      forms.forEach((form) => {
+        form.classList.remove('active');
+      });
+      btnsMob.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      item.classList.add('active');
+      forms[i].classList.add('active');
+      btnsMob[i].classList.add('active');
+      top.querySelector('span').textContent = item.textContent;
+    });
+  });
 
   btnsMob.forEach((item, i) => {
     item.addEventListener('click', () => {
-      btnsMob.forEach((btn) => {btn.classList.remove('active')})
-      btnsDesk.forEach((btn) => {btn.classList.remove('active')})
-      forms.forEach((form) => {form.classList.remove('active')})
-      btnsDesk[i].classList.add('active')
-      item.classList.add('active')
-      forms[i].classList.add('active')
-      $(bottom).slideToggle()
+      btnsMob.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      btnsDesk.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      forms.forEach((form) => {
+        form.classList.remove('active');
+      });
+      btnsDesk[i].classList.add('active');
+      item.classList.add('active');
+      forms[i].classList.add('active');
+      $(bottom).slideToggle();
 
-      top.querySelector('span').textContent = item.textContent
-    })
-
-  })
-
+      top.querySelector('span').textContent = item.textContent;
+    });
+  });
 
   top.addEventListener('click', () => {
-    $(bottom).slideToggle()
-    $(this).toggleClass('active')
-  })
-
+    $(bottom).slideToggle();
+    $(this).toggleClass('active');
+  });
 }
 
-function additionalFeaturesMinSwiper () {
+function additionalFeaturesMinSwiper() {
   const swiperOurWorks = new Swiper('.additional-features-min__swiper', {
     slidesPerView: 1,
     spaceBetween: rem(5),
@@ -1295,9 +1329,9 @@ function additionalFeaturesMinSwiper () {
     },
 
     breakpoints: {
-      768: {
+      769: {
         slidesPerView: 3,
-        autoHeight: false,
+        autoHeight: false
       }
     }
   });
